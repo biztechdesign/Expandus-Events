@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Founder-Led to Enterprise Sales | Expandus Business Coaching</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --color-purple: #643695; --color-purple-hover: #50276F; --color-purple-tint: #F1ECF8;
+  --color-coral: #F04F53; --color-coral-hover: #D83A3E; --color-coral-tint: #FEEDED;
+  --color-plum: #221331; --color-plum-soft: #34204A; --color-white: #FFFFFF;
+  --color-gray-50: #F7F7F7; --color-gray-100: #EEEEEE; --color-gray-200: #E0E0E0;
+  --color-gray-300: #DDDDDD; --color-gray-500: #888888; --color-gray-600: #666666;
+  --color-primary: var(--color-purple); --color-primary-hover: var(--color-purple-hover);
+  --color-accent: var(--color-coral); --color-accent-hover: var(--color-coral-hover);
+  --surface-page: var(--color-white); --surface-section: var(--color-gray-50);
+  --surface-card: var(--color-white);
+  --text-heading: var(--color-plum); --text-body: #444444; --text-muted-aa: var(--color-gray-600);
+  --text-on-dark: var(--color-white); --text-on-dark-soft: rgba(255,255,255,0.75);
+  --text-link: var(--color-purple); --text-link-hover: var(--color-purple-hover);
+  --border-default: var(--color-gray-200); --border-on-dark: rgba(255,255,255,0.16);
+  --color-success: #28A745;
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-body: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --text-h1: 56px; --lh-h1: 64px; --text-h2: 48px; --lh-h2: 56px; --text-h4: 32px; --lh-h4: 40px;
+  --text-h5: 24px; --lh-h5: 32px; --text-h6: 16px; --lh-h6: 24px;
+  --text-body-lg: 16px; --lh-body-lg: 24px; --text-body-def: 14px; --lh-body: 22px;
+  --text-body-sm: 13px; --lh-body-sm: 20px;
+  --tracking-tight: -0.02em; --tracking-wide: 0.05em;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-pill: 999px;
+  --radius-card: var(--radius-lg); --radius-form: var(--radius-md);
+  --shadow-soft: 0 8px 24px rgba(16,10,35,0.08); --shadow-lg: 0 8px 24px rgba(16,10,35,0.10);
+  --shadow-xl: 0 12px 32px rgba(0,0,0,0.18); --shadow-dark-section: 0 12px 32px rgba(0,0,0,0.18);
+}
+@media (max-width: 1024px) {
+  :root { --text-h1: 48px; --lh-h1: 56px; --text-h2: 40px; --lh-h2: 48px; --text-h5: 20px; --lh-h5: 28px; }
+}
+@media (max-width: 640px) {
+  :root { --text-h1: 40px; --lh-h1: 48px; --text-h2: 32px; --lh-h2: 40px; --text-h5: 18px; --lh-h5: 26px; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); overflow-x: hidden; font-family: var(--font-body); color: var(--text-body); }
+h1,h2,h3,h4,p { margin: 0; }
+a { color: var(--text-link); text-decoration: none; }
+a:hover { color: var(--text-link-hover); }
+img { max-width: 100%; display: block; }
+.img-slot { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; }
+.img-slot img { width: 100%; height: 100%; object-fit: cover; }
+.img-slot.filled img { display: block; }
+.img-slot.filled { border: none; }
+.img-slot .ph-label { color: var(--color-gray-500); font-size: 13px; text-align: center; padding: 12px; font-family: var(--font-body); }
+.img-slot.filled .ph-label { display: none; }
+.img-slot input[type=file] { display: none; }
+.ds-btn { font-family: var(--font-body); font-size: 14px; font-weight: 700; border-radius: var(--radius-md); border: none; padding: 0 24px; height: 52px; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.ds-btn-primary { background: var(--color-primary); color: #fff; }
+.ds-btn-primary:hover { background: var(--color-primary-hover); }
+.ds-btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+.ds-btn-outline-white:hover { background: rgba(255,255,255,0.12); }
+.ds-btn-accent { background: var(--color-accent); color: #fff; height: 36px; padding: 0 18px; font-size: 13px; }
+.ds-btn-accent:hover { background: var(--color-accent-hover); }
+.ds-btn-sm { height: 44px; padding: 0 20px; }
+.ds-badge { display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: var(--radius-pill); background: var(--color-coral-tint); color: var(--color-accent); }
+@keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.exp-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+.exp-attend-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.exp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.exp-speaker-grid { display: grid; grid-template-columns: 0.35fr 0.65fr; gap: 64px; align-items: center; }
+.exp-speaker-grid > div { min-width: 0; }
+.exp-about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+.exp-about-grid.who { grid-template-columns: 1fr 1fr; align-items: center; }
+.exp-about-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; row-gap: 12px; }
+.learn-card, .attend-card { background: var(--color-white); border: 1px solid var(--color-gray-100); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.learn-card:hover, .attend-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.icon-tile { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+@media (max-width: 1024px) {
+  .exp-hero-grid, .exp-speaker-grid { grid-template-columns: 1fr; }
+  .exp-stats-grid { grid-template-columns: 1fr; gap: 32px; }
+  .exp-about-grid { grid-template-columns: 1fr !important; }
+  .exp-attend-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 780px) {
+  .exp-ticket-grid {
+    grid-template-columns: 1fr !important;
+    -webkit-mask-image: radial-gradient(circle 28px at 0px 40%, transparent 27px, black 29px), radial-gradient(circle 28px at 100% 40%, transparent 27px, black 29px) !important;
+    -webkit-mask-composite: source-in, source-in !important;
+    mask-image: radial-gradient(circle 28px at 0px 40%, transparent 27px, black 29px), radial-gradient(circle 28px at 100% 40%, transparent 27px, black 29px) !important;
+    mask-composite: intersect, intersect !important;
+  }
+  .ticket-divider-v { display: none !important; }
+  .ticket-divider-h { display: block !important; }
+  .notch-trace-top, .notch-trace-bottom { display: none !important; }
+  .notch-trace-left, .notch-trace-right { display: block !important; }
+  .exp-ticket-grid > div:first-child { order: 1; border-radius: 30px 30px 0 0 !important; }
+  .exp-ticket-grid > div:nth-child(2) { order: 3; border-radius: 0 0 30px 30px !important; }
+  .exp-stats-cta-bg { background: var(--color-plum) !important; }
+}
+@media (max-width: 640px) {
+  .exp-about-cards-grid, .exp-attend-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 1150px) {
+  .exp-header-nav, .exp-header-social { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div style="font-family: var(--font-body); color: var(--text-body); background: var(--surface-page);">
+
+<header style="position: sticky; top: 0; z-index: 200; background: var(--color-white); border-bottom: 1px solid var(--border-default);">
+  <div style="max-width: 1200px; margin: 0 auto; height: 88px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+    <div style="font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--color-primary); letter-spacing: -0.02em;">EXPANDUS<span style="color: var(--color-accent);">™</span></div>
+    <nav class="exp-header-nav" style="display: flex; align-items: center; gap: 2px; flex-shrink: 0;">
+      <a href="#hero" style="white-space: nowrap; color: var(--text-heading); font-size: 13px; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; padding: 8px 12px;">Home</a>
+      <a href="#" style="white-space: nowrap; color: var(--text-heading); font-size: 13px; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; padding: 8px 12px;">About Us</a>
+      <a href="#" style="white-space: nowrap; color: var(--text-heading); font-size: 13px; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; padding: 8px 12px;">Services</a>
+      <a href="#learn" style="white-space: nowrap; color: var(--text-heading); font-size: 13px; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; padding: 8px 12px;">Events</a>
+      <a href="#" style="white-space: nowrap; color: var(--text-heading); font-size: 13px; font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; padding: 8px 12px;">Contact Us</a>
+    </nav>
+    <div class="exp-header-social" style="display: flex; align-items: center; gap: 16px; flex-shrink: 0;">
+      <div style="width: 1px; height: 28px; background: var(--border-default);"></div>
+      <a href="#" aria-label="Facebook" style="color: var(--color-primary); display: flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
+      <a href="#" aria-label="LinkedIn" style="color: var(--color-primary); display: flex;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57z"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<section id="hero" style="position: relative; padding: 64px 24px 140px; overflow: hidden;">
+  <div style="position: absolute; inset: 0; z-index: 0;">
+    <div class="img-slot" id="slot-hero-bg" data-placeholder="Drop a leadership / business-growth background image" style="border-radius: 0;">
+      <!--<span class="ph-label">Drop a leadership / business-growth background image</span>-->
+      <img src="img/hero-banner.png" alt="">
+      <label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label>
+    </div>
+    <div style="position: absolute; inset: 0;"></div>
+  </div>
+  <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;">
+    <h1 style="font-family: var(--font-display); font-size: var(--text-h1); line-height: var(--lh-h1); letter-spacing: var(--tracking-tight); color: var(--color-white); font-weight: 700; margin: 0 0 16px; max-width: 900px;">From Founder-Led to Enterprise Sales</h1>
+    <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span style="color: #fff; font-size: 14px;">Fri, Sep 18, 2026</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span style="color: #fff; font-size: 14px;">9:30 AM IST</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-4v12l-6-4"/></svg>
+        <span style="color: #fff; font-size: 14px;">Online via Zoom</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="reserve" style="position: relative; z-index: 3; max-width: 1200px; margin: -90px auto 56px; box-sizing: border-box;">
+  <div class="exp-ticket-grid" style="display: grid; grid-template-columns: 2fr 3fr; position: relative; overflow: hidden; border-radius: 30px; filter: drop-shadow(0 20px 40px rgba(34,19,49,0.35)); -webkit-mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); -webkit-mask-composite: source-in, source-in; mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); mask-composite: intersect, intersect;">
+    <div style="background: radial-gradient(120% 120% at 0% 0%, rgba(240,79,83,0.16) 0%, var(--color-plum) 45%), var(--color-plum); padding: 48px 44px; position: relative; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: #fff; margin: 0 0 14px;">Seats Are Filling Fast</h3>
+        <p style="font-size: 14px; line-height: 22px; color: var(--text-on-dark-soft); margin: 0 0 26px;">The founders who figure this out don't find a better product. They find a better process. This is where that starts.<br><br>Just 120 mins of your time and no registration fees.</p>
+      </div>
+      <div id="countdown" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 28px;">
+        <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px;">
+          <div id="cd-days" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
+          <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Days</div>
+        </div>
+        <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px; position: relative;">
+          <span style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
+          <div id="cd-hours" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
+          <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Hours</div>
+        </div>
+        <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px; position: relative;">
+          <span style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
+          <div id="cd-mins" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
+          <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Mins</div>
+        </div>
+        <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px; position: relative;">
+          <span style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
+          <div id="cd-secs" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
+          <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Secs</div>
+        </div>
+      </div>
+      <div style="margin-bottom: auto;"></div>
+      <div style="display: flex; align-items: center; gap: 8px; margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.14);">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span style="font-size: 13px; color: var(--text-on-dark-soft);">Limited seats available — <span style="color: var(--color-coral); font-weight: 600;">42 remaining</span></span>
+      </div>
+    </div>
+    <div style="background: var(--color-white); padding: 48px 52px; position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 30px; border: 2px dashed var(--border-default);">
+      <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: var(--text-heading); margin: 0 0 18px;">Reserve Your Spot</h3>
+      <div id="form-success" style="display: none; text-align: center; padding: 20px 0;">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#28A745" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        <p style="font-family: var(--font-display); font-weight: 600; color: var(--text-heading); margin: 10px 0 4px;">You're on the list.</p>
+        <p style="color: var(--text-muted-aa); font-size: 13px; margin: 0;">A confirmation is on its way to your inbox.</p>
+      </div>
+      <form id="reserve-form" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <input type="text" placeholder="First Name*" required style="width: 100%; height: 52px; padding: 0 18px; background: var(--color-gray-100); border: none; border-radius: var(--radius-form); font-family: var(--font-body); font-size: 14px; color: var(--text-heading);">
+          <input type="text" placeholder="Last Name*" required style="width: 100%; height: 52px; padding: 0 18px; background: var(--color-gray-100); border: none; border-radius: var(--radius-form); font-family: var(--font-body); font-size: 14px; color: var(--text-heading);">
+        </div>
+        <input type="tel" placeholder="Mobile Number*" required style="width: 100%; height: 52px; padding: 0 18px; background: var(--color-gray-100); border: none; border-radius: var(--radius-form); font-family: var(--font-body); font-size: 14px; color: var(--text-heading);">
+        <input type="email" placeholder="Email ID*" required style="width: 100%; height: 52px; padding: 0 18px; background: var(--color-gray-100); border: none; border-radius: var(--radius-form); font-family: var(--font-body); font-size: 14px; color: var(--text-heading);">
+        <input type="text" placeholder="Company Name*" required style="width: 100%; height: 52px; padding: 0 18px; background: var(--color-gray-100); border: none; border-radius: var(--radius-form); font-family: var(--font-body); font-size: 14px; color: var(--text-heading); margin-bottom: 6px;">
+        <button type="submit" class="ds-btn ds-btn-primary" style="width: 100%;">Reserve My Seat</button>
+      </form>
+    </div>
+    <div class="ticket-divider-v" style="position: absolute; top: 0; bottom: 0; left: 40%; width: 0; transform: translateX(-1px); z-index: 10; pointer-events: none;">
+      <div style="position: absolute; top: 28px; bottom: 28px; left: 0; width: 2px; background-image: repeating-linear-gradient(to bottom, var(--border-default) 0 10px, transparent 10px 20px);"></div>
+    </div>
+    <div class="ticket-divider-h" style="display: none; position: absolute; left: 0; right: 0; top: 40%; height: 0; transform: translateY(-1px); z-index: 10; pointer-events: none;">
+      <div style="position: absolute; left: 28px; right: 28px; top: 0; height: 2px; background-image: repeating-linear-gradient(to right, var(--border-default) 0 10px, transparent 10px 20px);"></div>
+    </div>
+  </div>
+  <div class="notch-trace-top" style="position: absolute; top: 0; left: 40%; transform: translateX(-50%); width: 56px; height: 28px; overflow: hidden; pointer-events: none; z-index: 4;">
+    <div style="position: absolute; top: -28px; left: 0; width: 56px; height: 56px; border-radius: 50%; border: 2px dashed var(--border-default);"></div>
+  </div>
+  <div class="notch-trace-bottom" style="position: absolute; bottom: 0; left: 40%; transform: translateX(-50%); width: 56px; height: 28px; overflow: hidden; pointer-events: none; z-index: 4;">
+    <div style="position: absolute; top: 0; left: 0; width: 56px; height: 56px; border-radius: 50%; border: 2px dashed var(--border-default);"></div>
+  </div>
+  <div class="notch-trace-left" style="display: none; position: absolute; left: 0; top: 40%; transform: translateY(-50%); width: 28px; height: 56px; overflow: hidden; pointer-events: none; z-index: 4;">
+    <div style="position: absolute; left: -28px; top: 0; width: 56px; height: 56px; border-radius: 50%; border: 2px dashed var(--border-default);"></div>
+  </div>
+  <div class="notch-trace-right" style="display: none; position: absolute; right: 0; top: 40%; transform: translateY(-50%); width: 28px; height: 56px; overflow: hidden; pointer-events: none; z-index: 4;">
+    <div style="position: absolute; left: 0; top: 0; width: 56px; height: 56px; border-radius: 50%; border: 2px dashed var(--border-default);"></div>
+  </div>
+</div>
+
+<section style="background: var(--surface-page); padding: 0 24px 138px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; max-width: 900px; margin: 0 auto 56px;">
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight);">Hear From Business Owners<br>Who've Been There</h2>
+    </div>
+  </div>
+  <div style="overflow: hidden; padding: 20px 0;">
+    <div id="row-a" style="display: flex; gap: 20px; width: max-content; animation: scroll-left 42s linear infinite;"></div>
+  </div>
+  <div style="overflow: hidden; padding: 20px 0;">
+    <div id="row-b" style="display: flex; gap: 20px; width: max-content; animation: scroll-right 42s linear infinite;"></div>
+  </div>
+</section>
+
+<section style="background: var(--surface-section); padding: 70px 24px; position: relative; z-index: 1;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; transform: translateY(-50%); z-index: 5; padding: 0 24px; box-sizing: border-box;">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-dark-section); background: var(--color-primary);">
+      <div style="position: absolute; inset: 0; background: linear-gradient(115deg, var(--color-plum) 0 70%, transparent 70%);" class="exp-stats-cta-bg"></div>
+      <div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 36px 40px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 64px; flex-wrap: wrap;">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: #fff;">4.9/5</div>
+            <div style="color: var(--text-on-dark-soft); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Average rating</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: #fff;">1000+</div>
+            <div style="color: var(--text-on-dark-soft); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Businesses helped</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: #fff;">97%</div>
+            <div style="color: var(--text-on-dark-soft); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Would recommend</div>
+          </div>
+        </div>
+        <button class="ds-btn ds-btn-outline-white" onclick="document.getElementById('reserve').scrollIntoView({behavior:'smooth'})">Reserve Your Seat</button>
+      </div>
+    </div>
+  </div>
+  <div class="exp-about-grid" style="max-width: 1200px; margin: 70px auto 0; gap: 56px;">
+    <div>
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Inside the Masterclass</h2>
+      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px;">Most businesses hit a growth ceiling — not because of product or talent, but because the founder is still the engine. In this full-day session, you'll learn how scalable businesses really work, and how to build a repeatable system inside your own company.</p>
+      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 24px;">Move from ad-hoc decisions to structured systems, from founder-dependent operations to accountable teams, and from reactive firefighting to strategic growth.</p>
+      <div style="border-radius: var(--radius-xl); overflow: hidden; height: 260px;">
+        <div class="img-slot" id="slot-about-event"><img src="img/inside the masterclass.webp" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+      </div>
+    </div>
+    <div>
+      <div class="exp-about-cards-grid" id="learn-cards"></div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--surface-page); padding: 70px 24px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto 56px;">
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight);">Why Should You Attend?</h2>
+    </div>
+    <div class="exp-attend-grid" id="attend-cards"></div>
+  </div>
+</section>
+
+<section id="learn" style="background: var(--surface-section); padding: 70px 24px;">
+  <div class="exp-about-grid who" style="max-width: 1200px; margin: 0 auto; gap: 56px;">
+    <div>
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Who Should Attend</h2>
+      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 20px;">This session is designed for:</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;" id="attend-primary"></div>
+      <p style="font-size: 14px; font-weight: 600; line-height: 22px; color: var(--text-heading); margin: 0 0 14px;">Especially valuable if you are:</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;" id="attend-secondary"></div>
+    </div>
+    <div style="border-radius: var(--radius-xl); overflow: hidden; height: 460px;">
+      <div class="img-slot" id="slot-who-attend"><img src="img/Who should attend.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+    </div>
+  </div>
+</section>
+
+<section id="speaker" style="background: var(--surface-page); padding-top: 70px; overflow: hidden;">
+  <div class="exp-speaker-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; align-items: stretch;">
+    <div style="position: relative;">
+      <div style="position: relative; z-index: 1; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; height: 100%; min-height: 460px;">
+        <div class="img-slot" id="slot-speaker"><img src="img/speaker.png" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+      </div>
+      <div style="position: absolute; bottom: 28px; right: 0px; z-index: 2; width: 62%; background: var(--color-white); border-radius: 16px; box-shadow: var(--shadow-lg); padding: 16px 22px;">
+        <p style="font-family: var(--font-display); font-size: var(--text-h5); font-weight: 700; color: var(--text-heading); margin: 0 0 6px;">Tabish Bibikar</p>
+        <p style="font-size: 14px; line-height: 22px; color: var(--color-accent); font-weight: 500; margin: 0;">Co-Founder &amp; Principal Software Business Coach</p>
+      </div>
+    </div>
+    <div style="padding-bottom: 70px;">
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 10px 0 6px; font-weight: 700;">Meet Your Coach</h2>
+      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 20px 0;">Tabish is a five-time award-winning Business Coach with over 30 years of industry experience. For the past 11 years, she has been coaching and mentoring high-performing software company founders across India, the USA, Turkey, Qatar, and Canada.</p>
+      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 0 0 20px;">With two decades of experience in the IT sector — spanning early-stage software startups, leading Indian IT corporates, and a global MNC — Tabish brings a rare blend of micro-level execution insight and macro-level strategic thinking.</p>
+      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 0 0 28px;">Her ability to deeply understand both the founder's mindset and enterprise buyer realities allows her to help entrepreneurs build scalable, resilient, and globally competitive software businesses.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div>
+          <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">30+</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide); white-space: nowrap;">Years experience</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">11</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide); white-space: nowrap;">Years coaching</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">5</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide); white-space: nowrap;">Coaching awards</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="position: relative; background: var(--color-plum); color: var(--text-on-dark); overflow: hidden;">
+  <div class="img-slot filled" id="slot-footer-bg" style="position: absolute; inset: 0; z-index: 0; border-radius: 0;"><img src="img/footer-bg.webp" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+  <div style="position: absolute; inset: 0; z-index: 0; background: rgba(34, 19, 49, 0.95);"></div>
+  <div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+    <div>
+      <h4 style="font-family: var(--font-display); font-size: var(--text-h4); font-weight: 700; color: #fff; margin: 0 0 20px;">Contact us</h4>
+      <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span style="color: var(--text-on-dark-soft); font-size: 14px; line-height: 22px;">A Building, Second Floor,<br>Hermes Vishal, Lane Number 7,<br>Koregaon Park, Pune,<br>Maharashtra, India 411001</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 3a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c1 .3 2 .5 3 .7a2 2 0 0 1 1.6 2Z"/></svg>
+        <a href="tel:+919823082268" style="color: var(--text-on-dark-soft); font-size: 14px;">+91 9823082268</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        <a href="/cdn-cgi/l/email-protection#5835313431363c183d202839363c2d2b3a2d2b31363d2b2b3b37393b3031363f763b3735" style="color: var(--text-on-dark-soft); font-size: 14px;"><span class="__cf_email__" data-cfemail="b5d8dcd9dcdbd1f5d0cdc5d4dbd1c0c6d7c0c6dcdbd0c6c6d6dad4d6dddcdbd29bd6dad8">[email&#160;protected]</span></a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family: var(--font-display); font-weight: 800; font-size: 22px; color: #fff; margin-bottom: 18px;">EXPANDUS<span style="color: var(--color-accent);">™</span></div>
+      <p style="color: var(--text-on-dark-soft); font-size: 14px; line-height: 22px;">We are 100% online. You will work with 100% online business coach. No geographical boundaries within India. We welcome you to your growth journey with us. Other than business coaching, there are ways to leverage our strengths. If you wish to be updated with practical business tips for everyday business matters, subscribe to <a href="#" style="color: #fff; text-decoration: underline;">Free Video Learning</a>.</p>
+    </div>
+  </div>
+  <div style="position: relative; z-index: 1; background: rgba(0,0,0,0.15); border-top: 1px solid var(--border-on-dark);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <span style="color: rgba(255,255,255,0.6); font-size: 13px;">© Copyright 2026 - Expandus Business Coaching. | <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: underline;">Privacy Policy</a></span>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span style="color: rgba(255,255,255,0.6); font-size: 13px;">Connected with us</span>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5M.24 8.25h4.5V23H.24zM8.5 8.25h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.65c0-1.58-.03-3.62-2.21-3.62-2.21 0-2.55 1.73-2.55 3.51V23H8.5z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M23 4.5s-.85.5-2.2.9c.9-1 1-1.9 1-1.9s-1 .6-2.2.9A3.6 3.6 0 0 0 13.5 8c0 .3 0 .5.1.8a10.2 10.2 0 0 1-7.4-3.8s-3 4.5 2 7.4c0 0-1 0-2-.5 0 0-.3 4 4 5 0 0-1 .6-3 .3 0 0 1 3.5 4.5 3.5A10.3 10.3 0 0 1 2 21.5a14.5 14.5 0 0 0 7.9 2.3c9.5 0 14.7-8 14.7-14.9v-.7A9.7 9.7 0 0 0 27 6.5s-1 .5-2 .7Z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M21.6 7.2s-.2-1.5-.8-2.2c-.8-.9-1.7-.9-2.1-1C15.9 3.8 12 3.8 12 3.8s-3.9 0-6.7.2c-.4 0-1.3.1-2.1 1-.6.7-.8 2.2-.8 2.2S2.2 9 2.2 10.7v1.5C2.2 14 2.4 15.7 2.4 15.7s.2 1.5.8 2.2c.8.9 1.9.9 2.4 1 1.7.2 7.4.2 7.4.2s3.9 0 6.7-.2c.4 0 1.3-.1 2.1-1 .6-.7.8-2.2.8-2.2s.2-1.7.2-3.5v-1.5c0-1.7-.2-3.5-.2-3.5M9.9 14.7V8.9l5.4 2.9z"/></svg>
+        </div>
+        <button class="ds-btn ds-btn-accent">Help</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="sticky-bar" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300; background: var(--color-white); border-top: 1px solid var(--border-default); box-shadow: var(--shadow-xl); padding: 16px 24px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-right: 48px;">
+    <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+      <span style="font-family: var(--font-display); font-weight: 600; color: var(--text-heading); font-size: 16px;">From Founder Led to Enterprise Sales</span>
+      <span style="color: var(--text-muted-aa); font-size: 13px;">Fri, Sep 18, 2026 · 9:30 AM IST</span>
+      <span class="ds-badge">42 seats left</span>
+    </div>
+    <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="document.getElementById('reserve').scrollIntoView({behavior:'smooth'})">Reserve Now</button>
+  </div>
+  <button id="sticky-close" aria-label="Close" style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; border: none; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+</div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Image upload placeholders
+document.querySelectorAll('.img-slot').forEach(function(slot) {
+  var input = slot.querySelector('input[type=file]');
+  var img = slot.querySelector('img');
+  input.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      img.src = ev.target.result;
+      slot.classList.add('filled');
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+// Countdown timer
+var target = new Date('2026-09-18T09:30:00+05:30').getTime();
+function pad(n) { return String(n).padStart(2, '0'); }
+function tick() {
+  var d = Math.max(0, target - Date.now());
+  document.getElementById('cd-days').textContent = pad(Math.floor(d / 86400000));
+  document.getElementById('cd-hours').textContent = pad(Math.floor((d % 86400000) / 3600000));
+  document.getElementById('cd-mins').textContent = pad(Math.floor((d % 3600000) / 60000));
+  document.getElementById('cd-secs').textContent = pad(Math.floor((d % 60000) / 1000));
+}
+tick();
+setInterval(tick, 1000);
+
+// Sticky bar
+var stickyDismissed = false;
+window.addEventListener('scroll', function() {
+  var bar = document.getElementById('sticky-bar');
+  var show = window.scrollY > 700 && !stickyDismissed;
+  bar.style.display = show ? 'block' : 'none';
+});
+document.getElementById('sticky-close').addEventListener('click', function() {
+  stickyDismissed = true;
+  document.getElementById('sticky-bar').style.display = 'none';
+});
+
+// Form submit
+document.getElementById('reserve-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+});
+
+// Testimonials
+var testimonials = [
+  { photo: 'img/testimonial-1.jpg', name: 'Anita Rao', role: 'Founder, Cleanergy Solutions', quote: "We finally stepped out of day-to-day firefighting and started running the business like owners, not operators." },
+  { photo: 'img/testimonial-2.jpg', name: 'Vikram Shah', role: 'CEO, Kuro Bots', quote: 'The frameworks from this session paid for themselves within the first quarter. Practical, not theoretical.' },
+  { photo: 'img/testimonial-3.jpg', name: 'Meera Iyer', role: 'MD, SSD Technologies', quote: 'Every session is packed with real numbers and real accountability. No fluff, just growth.' },
+  { photo: 'img/testimonial-4.jpg', name: 'Rohan Desai', role: 'Founder, Systango', quote: 'The accountability structure alone was worth the trip. We finally have a rhythm that sticks.' },
+  { photo: 'img/testimonial-1.jpg', name: 'Priya Nair', role: 'MD, Promact Infotech', quote: 'Practical, numbers-driven coaching. I walked out with a 90-day plan I actually use.' },
+  { photo: 'img/testimonial-2.jpg', name: 'Arjun Verma', role: 'CEO, Tekmindz', quote: 'This is where founders go to stop being the bottleneck in their own business.' }
+];
+function starIcons() {
+  var s = '';
+  for (var i = 0; i < 5; i++) s += '<svg width="14" height="14" viewBox="0 0 24 24" fill="#F04F53"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg>';
+  return s;
+}
+function cardHtml(t, idx) {
+  return '<div style="width:440px;height:240px;flex-shrink:0;background:var(--surface-card);border:1px solid var(--color-gray-100);border-radius:var(--radius-card);box-shadow:var(--shadow-soft);padding:32px;position:relative;display:flex;flex-direction:column;">' +
+    '<svg width="28" height="28" viewBox="0 0 24 24" fill="var(--color-purple-tint)" style="position:absolute;top:24px;right:24px;"><path d="M9.5 8.5C7 8.5 5 10.5 5 13v6h6v-6H7.5c0-1.4 1.1-2.5 2.5-2.5V8.5zm9 0c-2.5 0-4.5 2-4.5 4.5v6h6v-6h-3.5c0-1.4 1.1-2.5 2.5-2.5V8.5z"/></svg>' +
+    '<div style="display:flex;gap:2px;margin-bottom:14px;">' + starIcons() + '</div>' +
+    '<p style="font-size:14px;line-height:24px;color:var(--text-heading);margin:0 0 20px;font-style:italic;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;">"' + t.quote + '"</p>' +
+    '<div style="display:flex;align-items:center;gap:12px;margin-top:auto;">' +
+    '<div class="img-slot filled" id="slot-t-' + idx + '" style="width:44px;height:44px;border-radius:50%;"><img src="' + t.photo + '" alt="' + t.name + '"><label style="position:absolute;inset:0;cursor:pointer;"><input type="file" accept="image/*"></label></div>' +
+    '<div><div style="font-weight:600;color:var(--text-heading);font-size:14px;">' + t.name + '</div><div style="color:var(--text-muted-aa);font-size:13px;">' + t.role + '</div></div>' +
+    '</div></div>';
+}
+var rowA = document.getElementById('row-a');
+var rowB = document.getElementById('row-b');
+var listA = testimonials.concat(testimonials);
+var listB = testimonials.slice().reverse().concat(testimonials.slice().reverse());
+listA.forEach(function(t, i) { rowA.insertAdjacentHTML('beforeend', cardHtml(t, 'a' + i)); });
+listB.forEach(function(t, i) { rowB.insertAdjacentHTML('beforeend', cardHtml(t, 'b' + i)); });
+
+// Learn cards
+var learnCards = [
+  { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Founder-led to structured', desc: 'Why founder-dependent decisions stop working once you try to scale.' },
+  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', title: 'Building accountable teams', desc: 'The structural shift from doing everything to leading a team that delivers.' },
+  { icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z', title: 'Systems over hustle', desc: 'What a scalable operating system looks like — roles, rhythms, ownership.' },
+  { icon: 'M23 6l-9.5 9.5-5-5L1 18', title: 'Sustainable growth model', desc: 'How to grow revenue and margin together without burning out the team.' },
+  { icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM12 6v6l4 2', title: 'Spotting bottlenecks early', desc: 'Where founders unknowingly create ceilings — and how to catch it in time.' },
+  { icon: 'M18 20V10M12 20V4M6 20v-6', title: 'Reading the numbers', desc: 'Financial visibility that lets you act on problems before they compound.' }
+];
+var attendCards = [
+  { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Systems, not scripts', desc: 'Built around what actually drives business growth.' },
+  { icon: 'M20 7h-9M14 17H5M17 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', title: 'Built for founders', desc: 'Every framework is tailored to owner-led businesses.' },
+  { icon: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0zM16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z', title: 'Four pillars covered', desc: 'Structure, process, people & mindset — a scalable business.' },
+  { icon: 'M13 2 3 14h9l-1 8 10-12h-9z', title: 'Implement immediately', desc: 'Not theory, but actionable clarity you can apply right away.' },
+  { icon: 'M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.35-4.35', title: "Spot what's missing", desc: 'Identify the gaps in how your business currently runs.' },
+  { icon: 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11', title: 'Clear next steps', desc: 'Walk away ready to move the needle right after the session.' },
+  { icon: 'M3 6h18M3 12h18M3 18h18', title: 'A scaling blueprint', desc: 'A clear path to grow beyond your own bandwidth.' },
+  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', title: 'Team clarity', desc: 'Clarity on team structure and roles so accountability sticks.' }
+];
+function iconTile(pathD) {
+  return '<div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="' + pathD + '"/></svg></div>';
+}
+var learnWrap = document.getElementById('learn-cards');
+learnCards.forEach(function(c) {
+  learnWrap.insertAdjacentHTML('beforeend', '<div class="learn-card">' + iconTile(c.icon) +
+    '<h4 style="font-family:var(--font-display);font-size:16px;color:var(--text-heading);margin:0 0 6px;">' + c.title + '</h4>' +
+    '<p style="font-size:14px;line-height:20px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div>');
+});
+var attendWrap = document.getElementById('attend-cards');
+attendCards.forEach(function(c) {
+  attendWrap.insertAdjacentHTML('beforeend', '<div class="attend-card">' + iconTile(c.icon) +
+    '<h4 style="font-family:var(--font-display);font-size:16px;color:var(--text-heading);margin:0 0 6px;">' + c.title + '</h4>' +
+    '<p style="font-size:14px;line-height:20px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div>');
+});
+
+// Who should attend lists
+var attendPrimary = [
+  'Founders & co-founders of growing businesses',
+  'CEOs & Managing Directors',
+  'Sales heads & revenue leaders',
+  'Owner-led product, services, and SME businesses',
+  'Companies based in India and global markets (USA, Canada, Europe, Middle East)'
+];
+var attendSecondary = ['Struggling with high-value deals', 'Too founder-dependent', 'Stuck at a plateau', "Can't scale predictably"];
+var primaryWrap = document.getElementById('attend-primary');
+attendPrimary.forEach(function(pt) {
+  primaryWrap.insertAdjacentHTML('beforeend', '<div style="display:flex;gap:10px;"><span style="color:var(--color-coral);flex-shrink:0;">•</span><p style="margin:0;font-size:14px;line-height:22px;color:var(--text-body);">' + pt + '</p></div>');
+});
+var secondaryWrap = document.getElementById('attend-secondary');
+attendSecondary.forEach(function(pt) {
+  secondaryWrap.insertAdjacentHTML('beforeend', '<span style="display:inline-flex;align-items:center;gap:6px;background:var(--color-white);border:1px solid var(--border-default);color:var(--text-heading);font-size:13px;padding:8px 14px;border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>' + pt + '</span>');
+});
+</script>
+</body>
+</html>
