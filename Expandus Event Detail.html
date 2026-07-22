@@ -171,7 +171,7 @@ img { max-width: 100%; display: block; }
 
 <div id="reserve" style="position: relative; z-index: 3; max-width: 1200px; margin: -90px auto 56px; box-sizing: border-box;">
   <div class="exp-ticket-grid" style="display: grid; grid-template-columns: 2fr 3fr; position: relative; overflow: hidden; border-radius: 30px; filter: drop-shadow(0 20px 40px rgba(34,19,49,0.35)); -webkit-mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); -webkit-mask-composite: source-in, source-in; mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); mask-composite: intersect, intersect;">
-    <div style="background: radial-gradient(120% 120% at 0% 0%, rgba(240,79,83,0.16) 0%, var(--color-plum) 45%), var(--color-plum); padding: 48px 44px; position: relative; display: flex; flex-direction: column; height: 100%; box-sizing: border-box;">
+    <div style="background: radial-gradient(120% 120% at 0% 0%, rgba(240,79,83,0.16) 0%, var(--color-plum) 45%), var(--color-plum); padding: 48px 44px; position: relative; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; border: 2px dashed var(--border-default); border-right: 0; border-radius: 30px;">
       <div>
         <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: #fff; margin: 0 0 14px;">Seats Are Filling Fast</h3>
         <p style="font-size: 14px; line-height: 22px; color: var(--text-on-dark-soft); margin: 0 0 26px;">The founders who figure this out don't find a better product. They find a better process. This is where that starts.<br><br>Just 120 mins of your time and no registration fees.</p>
@@ -203,7 +203,7 @@ img { max-width: 100%; display: block; }
         <span style="font-size: 13px; color: var(--text-on-dark-soft);">Limited seats available — <span style="color: var(--color-coral); font-weight: 600;">42 remaining</span></span>
       </div>
     </div>
-    <div style="background: var(--color-white); padding: 48px 52px; position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 30px; border: 2px dashed var(--border-default);">
+    <div style="background: var(--color-white); padding: 48px 52px; position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 30px; border: 2px dashed var(--border-default); border-left: 0;">
       <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: var(--text-heading); margin: 0 0 18px;">Reserve Your Spot</h3>
       <div id="form-success" style="display: none; text-align: center; padding: 20px 0;">
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#28A745" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
@@ -222,10 +222,10 @@ img { max-width: 100%; display: block; }
       </form>
     </div>
     <div class="ticket-divider-v" style="position: absolute; top: 0; bottom: 0; left: 40%; width: 0; transform: translateX(-1px); z-index: 10; pointer-events: none;">
-      <div style="position: absolute; top: 28px; bottom: 28px; left: 0; width: 2px; background-image: repeating-linear-gradient(to bottom, var(--border-default) 0 10px, transparent 10px 20px);"></div>
+      <div style="position: absolute; top: 28px; bottom: 28px; left: 0; width: 2px; background-image: repeating-linear-gradient(to bottom, var(--border-default) 0 6px, transparent 6px 12px);"></div>
     </div>
     <div class="ticket-divider-h" style="display: none; position: absolute; left: 0; right: 0; top: 40%; height: 0; transform: translateY(-1px); z-index: 10; pointer-events: none;">
-      <div style="position: absolute; left: 28px; right: 28px; top: 0; height: 2px; background-image: repeating-linear-gradient(to right, var(--border-default) 0 10px, transparent 10px 20px);"></div>
+      <div style="position: absolute; left: 28px; right: 28px; top: 0; height: 2px; background-image: repeating-linear-gradient(to right, var(--border-default) 0 6px, transparent 6px 12px);"></div>
     </div>
   </div>
   <div class="notch-trace-top" style="position: absolute; top: 0; left: 40%; transform: translateX(-50%); width: 56px; height: 28px; overflow: hidden; pointer-events: none; z-index: 4;">
@@ -250,9 +250,6 @@ img { max-width: 100%; display: block; }
   </div>
   <div style="overflow: hidden; padding: 20px 0;">
     <div id="row-a" class="marquee-row dir-left"></div>
-  </div>
-  <div style="overflow: hidden; padding: 20px 0;">
-    <div id="row-b" class="marquee-row dir-right"></div>
   </div>
 </section>
 
@@ -484,11 +481,8 @@ function cardHtml(t, idx) {
     '</div></div>';
 }
 var rowA = document.getElementById('row-a');
-var rowB = document.getElementById('row-b');
 var listA = testimonials.concat(testimonials);
-var listB = testimonials.slice().reverse().concat(testimonials.slice().reverse());
 listA.forEach(function(t, i) { rowA.insertAdjacentHTML('beforeend', cardHtml(t, 'a' + i)); });
-listB.forEach(function(t, i) { rowB.insertAdjacentHTML('beforeend', cardHtml(t, 'b' + i)); });
 
 // Learn cards
 var learnCards = [
