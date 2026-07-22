@@ -68,10 +68,10 @@ img { max-width: 100%; display: block; }
 .marquee-row.dir-left { animation: scroll-left 42s linear infinite; }
 .marquee-row.dir-right { animation: scroll-right 42s linear infinite; }
 .marquee-row:hover { animation-play-state: paused; }
-.testimonial-card { width: 520px; height: 268px; flex-shrink: 0; background: var(--surface-card); border: 1px solid var(--color-gray-100); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); padding: 36px; position: relative; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.testimonial-card { width: 520px; height: 204px; flex-shrink: 0; background: var(--surface-card); border: 1px solid var(--color-gray-100); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); padding: 32px 36px; position: relative; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 @media (max-width: 640px) {
-  .testimonial-card { width: 300px; height: 250px; padding: 24px; }
+  .testimonial-card { width: 300px; height: 198px; padding: 24px; }
 }
 .exp-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
 .exp-attend-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -473,9 +473,9 @@ function starIcons() {
 function cardHtml(t, idx) {
   return '<div class="testimonial-card">' +
     '<svg width="28" height="28" viewBox="0 0 24 24" fill="var(--color-purple-tint)" style="position:absolute;top:24px;right:24px;"><path d="M9.5 8.5C7 8.5 5 10.5 5 13v6h6v-6H7.5c0-1.4 1.1-2.5 2.5-2.5V8.5zm9 0c-2.5 0-4.5 2-4.5 4.5v6h6v-6h-3.5c0-1.4 1.1-2.5 2.5-2.5V8.5z"/></svg>' +
-    '<div style="display:flex;gap:2px;margin-bottom:14px;">' + starIcons() + '</div>' +
-    '<p style="font-size:14px;line-height:24px;color:var(--text-heading);margin:0 0 20px;font-style:italic;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;">"' + t.quote + '"</p>' +
-    '<div style="display:flex;align-items:center;gap:12px;margin-top:auto;">' +
+    '<div style="display:flex;gap:2px;margin-bottom:14px;flex-shrink:0;">' + starIcons() + '</div>' +
+    '<p style="font-size:14px;line-height:24px;color:var(--text-heading);margin:0 0 15px;font-style:italic;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;flex-shrink:0;">"' + t.quote + '"</p>' +
+    '<div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">' +
     '<div class="img-slot filled" id="slot-t-' + idx + '" style="width:44px;height:44px;border-radius:50%;"><img src="' + t.photo + '" alt="' + t.name + '"><label style="position:absolute;inset:0;cursor:pointer;"><input type="file" accept="image/*"></label></div>' +
     '<div><div style="font-weight:600;color:var(--text-heading);font-size:14px;">' + t.name + '</div><div style="color:var(--text-muted-aa);font-size:13px;">' + t.role + '</div></div>' +
     '</div></div>';
