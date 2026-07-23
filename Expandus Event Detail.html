@@ -48,6 +48,7 @@ a:hover { color: var(--text-link-hover); }
 img { max-width: 100%; display: block; }
 .img-slot { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; }
 .img-slot img { width: 100%; height: 100%; object-fit: cover; }
+#slot-speaker img { object-position: center 15%; }
 .img-slot.filled img { display: block; }
 .img-slot.filled { border: none; }
 .img-slot .ph-label { color: var(--color-gray-500); font-size: 13px; text-align: center; padding: 12px; font-family: var(--font-body); }
@@ -85,32 +86,63 @@ img { max-width: 100%; display: block; }
 .learn-card:hover, .attend-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .icon-tile { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
 @media (max-width: 1024px) {
-  .exp-hero-grid, .exp-speaker-grid { grid-template-columns: 1fr; }
+  .exp-hero-grid { grid-template-columns: 1fr; }
   .exp-stats-grid { grid-template-columns: 1fr; gap: 32px; }
   .exp-about-grid { grid-template-columns: 1fr !important; }
   .exp-attend-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .speaker-img-wrap { min-height: 320px !important; }
+}
+@media (max-width: 900px) {
+  .speaker-img-wrap { min-height: 240px !important; }
+  .speaker-card { width: 88% !important; padding: 12px 16px !important; bottom: 16px !important; }
+  .speaker-card-title { font-size: 12px !important; line-height: 18px !important; }
+}
+@media (max-width: 640px) {
+  .exp-speaker-grid { grid-template-columns: 1fr; }
+  .speaker-img-wrap { min-height: 260px !important; }
+  .speaker-card { width: 62% !important; padding: 16px 22px !important; bottom: 28px !important; }
+  .speaker-card-title { font-size: 14px !important; line-height: 22px !important; }
+}
+@media (max-width: 480px) {
+  .speaker-img-wrap { min-height: 220px !important; }
 }
 @media (max-width: 780px) {
   .exp-ticket-grid {
     grid-template-columns: 1fr !important;
-    -webkit-mask-image: radial-gradient(circle 28px at 0px 40%, transparent 27px, black 29px), radial-gradient(circle 28px at 100% 40%, transparent 27px, black 29px) !important;
-    -webkit-mask-composite: source-in, source-in !important;
-    mask-image: radial-gradient(circle 28px at 0px 40%, transparent 27px, black 29px), radial-gradient(circle 28px at 100% 40%, transparent 27px, black 29px) !important;
-    mask-composite: intersect, intersect !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    border: 2px dashed var(--border-default) !important;
+    filter: none !important;
   }
   .ticket-divider-v { display: none !important; }
-  .ticket-divider-h { display: block !important; }
-  .notch-trace-top, .notch-trace-bottom { display: none !important; }
-  .notch-trace-left, .notch-trace-right { display: block !important; }
+  .ticket-divider-h { display: none !important; }
+  .notch-trace-top, .notch-trace-bottom, .notch-trace-left, .notch-trace-right { display: none !important; }
   .exp-ticket-grid > div:first-child { order: 1; border-radius: 30px 30px 0 0 !important; }
   .exp-ticket-grid > div:nth-child(2) { order: 3; border-radius: 0 0 30px 30px !important; }
   .exp-stats-cta-bg { background: var(--color-plum) !important; }
+  .ticket-seats-panel { padding: 32px 28px !important; border: none !important; }
+  .ticket-form-panel { border: none !important; }
+  #countdown { gap: 12px !important; }
+  .cd-colon { left: -9px !important; }
 }
 @media (max-width: 640px) {
   .exp-about-cards-grid, .exp-attend-grid { grid-template-columns: 1fr !important; }
 }
+@media (max-width: 480px) {
+  .ticket-seats-panel { padding: 28px 18px !important; }
+  #countdown { gap: 8px !important; }
+  #countdown > div { padding: 10px 2px !important; }
+  #cd-days, #cd-hours, #cd-mins, #cd-secs { font-size: 20px !important; }
+  .cd-colon { left: -6px !important; font-size: 18px !important; }
+}
 @media (max-width: 1150px) {
   .exp-header-nav, .exp-header-social { display: none !important; }
+}
+@media (max-width: 700px) {
+  .exp-stats-cta-row { justify-content: center !important; text-align: center; padding: 24px 20px !important; }
+  .exp-stats-cta-stats { justify-content: space-between !important; flex-wrap: nowrap !important; gap: 10px !important; width: 100%; }
+  .exp-stats-cta-stats > div > div:first-child { font-size: 20px !important; }
+  .exp-stats-cta-stats > div > div:last-child { font-size: 9px !important; }
 }
 </style>
 </head>
@@ -169,41 +201,37 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<div id="reserve" style="position: relative; z-index: 3; max-width: 1200px; margin: -90px auto 56px; box-sizing: border-box;">
+<div id="reserve" style="position: relative; z-index: 3; max-width: 1200px; margin: -40px auto 56px; box-sizing: border-box;">
+  <div style="position: relative; padding: 0 24px; box-sizing: border-box;">
   <div class="exp-ticket-grid" style="display: grid; grid-template-columns: 2fr 3fr; position: relative; overflow: hidden; border-radius: 30px; filter: drop-shadow(0 20px 40px rgba(34,19,49,0.35)); -webkit-mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); -webkit-mask-composite: source-in, source-in; mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); mask-composite: intersect, intersect;">
-    <div style="background: radial-gradient(120% 120% at 0% 0%, rgba(240,79,83,0.16) 0%, var(--color-plum) 45%), var(--color-plum); padding: 48px 44px; position: relative; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; border: 2px dashed var(--border-default); border-right: 0; border-radius: 30px;">
+    <div class="ticket-seats-panel" style="background: radial-gradient(120% 120% at 0% 0%, rgba(240,79,83,0.16) 0%, var(--color-plum) 45%), var(--color-plum); padding: 48px 44px; position: relative; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; border: 2px dashed var(--border-default); border-right: 0; border-radius: 30px;">
       <div>
-        <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: #fff; margin: 0 0 14px;">Seats Are Filling Fast</h3>
+        <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: #fff; margin: 0 0 14px;">Don't Miss This Session</h3>
         <p style="font-size: 14px; line-height: 22px; color: var(--text-on-dark-soft); margin: 0 0 26px;">The founders who figure this out don't find a better product. They find a better process. This is where that starts.<br><br>Just 120 mins of your time and no registration fees.</p>
       </div>
-      <div id="countdown" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 28px;">
+      <div id="countdown" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-bottom: 28px; width: 100%;">
         <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px;">
           <div id="cd-days" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
           <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Days</div>
         </div>
         <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px; position: relative;">
-          <span style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
+          <span class="cd-colon" style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
           <div id="cd-hours" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
           <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Hours</div>
         </div>
         <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px; position: relative;">
-          <span style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
+          <span class="cd-colon" style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
           <div id="cd-mins" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
           <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Mins</div>
         </div>
         <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px; position: relative;">
-          <span style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
+          <span class="cd-colon" style="position: absolute; left: -16px; top: 40%; transform: translateY(-50%); font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #fff;">:</span>
           <div id="cd-secs" style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-coral);">00</div>
           <div style="font-size: 10px; color: var(--text-on-dark-soft); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-top: 4px;">Secs</div>
         </div>
       </div>
-      <div style="margin-bottom: auto;"></div>
-      <div style="display: flex; align-items: center; gap: 8px; margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.14);">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <span style="font-size: 13px; color: var(--text-on-dark-soft);">Limited seats available — <span style="color: var(--color-coral); font-weight: 600;">42 remaining</span></span>
-      </div>
     </div>
-    <div style="background: var(--color-white); padding: 48px 52px; position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 30px; border: 2px dashed var(--border-default); border-left: 0;">
+    <div class="ticket-form-panel" style="background: var(--color-white); padding: 48px 52px; position: relative; display: flex; flex-direction: column; justify-content: center; border-radius: 30px; border: 2px dashed var(--border-default); border-left: 0;">
       <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: var(--text-heading); margin: 0 0 18px;">Reserve Your Spot</h3>
       <div id="form-success" style="display: none; text-align: center; padding: 20px 0;">
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#28A745" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
@@ -240,6 +268,7 @@ img { max-width: 100%; display: block; }
   <div class="notch-trace-right" style="display: none; position: absolute; right: 0; top: 40%; transform: translateY(-50%); width: 28px; height: 56px; overflow: hidden; pointer-events: none; z-index: 4;">
     <div style="position: absolute; left: 0; top: 0; width: 56px; height: 56px; border-radius: 50%; border: 2px dashed var(--border-default);"></div>
   </div>
+  </div>
 </div>
 
 <section style="background: var(--surface-page); padding: 0 24px 138px;">
@@ -257,8 +286,8 @@ img { max-width: 100%; display: block; }
   <div style="position: absolute; top: 0; left: 0; right: 0; transform: translateY(-50%); z-index: 5; padding: 0 24px; box-sizing: border-box;">
     <div style="max-width: 1200px; margin: 0 auto; position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-dark-section); background: var(--color-primary);">
       <div style="position: absolute; inset: 0; background: linear-gradient(115deg, var(--color-plum) 0 70%, transparent 70%);" class="exp-stats-cta-bg"></div>
-      <div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 36px 40px; flex-wrap: wrap;">
-        <div style="display: flex; align-items: center; gap: 64px; flex-wrap: wrap;">
+      <div class="exp-stats-cta-row" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 36px 40px; flex-wrap: wrap;">
+        <div class="exp-stats-cta-stats" style="display: flex; align-items: center; gap: 64px; flex-wrap: wrap;">
           <div>
             <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: #fff;">4.9/5</div>
             <div style="color: var(--text-on-dark-soft); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Average rating</div>
@@ -318,12 +347,12 @@ img { max-width: 100%; display: block; }
 <section id="speaker" style="background: var(--surface-page); padding-top: 70px; overflow: hidden;">
   <div class="exp-speaker-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; align-items: stretch;">
     <div style="position: relative;">
-      <div style="position: relative; z-index: 1; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; height: 100%; min-height: 460px;">
+      <div class="speaker-img-wrap" style="position: relative; z-index: 1; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; height: 100%; min-height: 460px;">
         <div class="img-slot" id="slot-speaker"><img src="img/speaker.png" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
       </div>
-      <div style="position: absolute; bottom: 28px; right: 0px; z-index: 2; width: 62%; background: var(--color-white); border-radius: 16px; box-shadow: var(--shadow-lg); padding: 16px 22px;">
+      <div class="speaker-card" style="position: absolute; bottom: 28px; right: 0px; z-index: 2; width: 62%; background: var(--color-white); border-radius: 16px; box-shadow: var(--shadow-lg); padding: 16px 22px;">
         <p style="font-family: var(--font-display); font-size: var(--text-h5); font-weight: 700; color: var(--text-heading); margin: 0 0 6px;">Tabish Bibikar</p>
-        <p style="font-size: 14px; line-height: 22px; color: var(--color-accent); font-weight: 500; margin: 0;">Co-Founder &amp; Principal Software Business Coach</p>
+        <p class="speaker-card-title" style="font-size: 14px; line-height: 22px; color: var(--color-accent); font-weight: 500; margin: 0;">Co-Founder &amp; Principal Software Business Coach</p>
       </div>
     </div>
     <div style="padding-bottom: 70px;">
@@ -396,7 +425,6 @@ img { max-width: 100%; display: block; }
     <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
       <span style="font-family: var(--font-display); font-weight: 600; color: #fff; font-size: 16px;">From Founder Led to Enterprise Sales</span>
       <span style="color: var(--text-on-dark-soft); font-size: 13px;">Fri, Sep 18, 2026 · 9:30 AM IST</span>
-      <span class="ds-badge">42 seats left</span>
     </div>
     <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="document.getElementById('reserve').scrollIntoView({behavior:'smooth'})">Reserve Now</button>
   </div>
