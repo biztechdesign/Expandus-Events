@@ -79,18 +79,40 @@ img { max-width: 100%; display: block; }
 .exp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .exp-speaker-grid { display: grid; grid-template-columns: 0.35fr 0.65fr; gap: 64px; align-items: center; }
 .exp-speaker-grid > div { min-width: 0; }
-.exp-about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
-.exp-about-grid.who { grid-template-columns: 1fr 1fr; align-items: center; }
-.exp-about-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; row-gap: 12px; }
-.learn-card, .attend-card { background: var(--color-white); border: 1px solid var(--color-gray-100); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.learn-card:hover, .attend-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.exp-masterclass-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: stretch; }
+.exp-whoattend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.masterclass-points { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; row-gap: 22px; }
+.masterclass-point { display: flex; gap: 12px; align-items: flex-start; }
+.attend-card { background: var(--color-white); border: 1px solid var(--color-gray-100); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.attend-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .icon-tile { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.icon-tile-sm { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.attend-bg-section { position: relative; overflow: hidden; padding: 90px 24px; box-sizing: border-box; }
+.attend-bg-section .img-slot { position: absolute; inset: 0; z-index: 0; border-radius: 0; }
+.attend-feature-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(160deg, rgba(34, 19, 49, 0.98) 0%, rgba(100, 54, 149, 0.88) 48%, rgba(34, 19, 49, 0.98) 100%); }
+.attend-feature-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+.attend-grid-dark .attend-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); box-shadow: none; }
+.attend-grid-dark .attend-card:hover { background: rgba(255,255,255,0.12); box-shadow: none; }
+.attend-grid-dark .icon-tile { background: rgba(255,255,255,0.14); }
+.attend-grid-dark .icon-tile svg { stroke: #fff; }
+.attend-grid-dark h4 { color: #fff !important; }
+.attend-grid-dark p { color: var(--text-on-dark-soft) !important; }
+.whoattend-img-wrap { position: relative; }
+.whoattend-accent { position: absolute; inset: -20px -20px 20px 20px; background: var(--color-purple-tint); border-radius: var(--radius-xl); z-index: 0; }
+.whoattend-panel { padding: 0; }
+.whoattend-photo { height: 440px; }
 @media (max-width: 1024px) {
   .exp-hero-grid { grid-template-columns: 1fr; }
   .exp-stats-grid { grid-template-columns: 1fr; gap: 32px; }
-  .exp-about-grid { grid-template-columns: 1fr !important; }
+  .exp-masterclass-grid { grid-template-columns: 1fr !important; }
+  .exp-whoattend-grid { grid-template-columns: 1fr !important; }
   .exp-attend-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .speaker-img-wrap { min-height: 320px !important; }
+  .masterclass-img-wrap { height: 320px !important; }
+  .whoattend-photo { height: 320px !important; }
+}
+@media (max-width: 900px) {
+  .attend-bg-section { padding: 64px 24px; }
 }
 @media (max-width: 900px) {
   .speaker-img-wrap { min-height: 240px !important; }
@@ -126,7 +148,12 @@ img { max-width: 100%; display: block; }
   .cd-colon { left: -9px !important; }
 }
 @media (max-width: 640px) {
-  .exp-about-cards-grid, .exp-attend-grid { grid-template-columns: 1fr !important; }
+  .masterclass-points, .exp-attend-grid { grid-template-columns: 1fr !important; }
+  .masterclass-card { padding: 28px 0 !important; }
+  .masterclass-img-wrap { height: 260px !important; }
+  .whoattend-photo { height: 260px !important; }
+  .attend-bg-section { padding: 48px 20px !important; }
+  .whoattend-accent { inset: -12px -12px 12px 12px !important; }
 }
 @media (max-width: 480px) {
   .ticket-seats-panel { padding: 28px 18px !important; }
@@ -285,7 +312,7 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<section style="background: var(--surface-section); padding: 70px 24px; position: relative; z-index: 1;">
+<section style="background: var(--color-gray-50); padding: 70px 24px; position: relative; z-index: 1;">
   <div style="position: absolute; top: 0; left: 0; right: 0; transform: translateY(-50%); z-index: 5; padding: 0 24px; box-sizing: border-box;">
     <div style="max-width: 1200px; margin: 0 auto; position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-dark-section); background: var(--color-primary);">
       <div style="position: absolute; inset: 0; background: linear-gradient(115deg, var(--color-plum) 0 70%, transparent 70%);" class="exp-stats-cta-bg"></div>
@@ -308,41 +335,41 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
   </div>
-  <div class="exp-about-grid" style="max-width: 1200px; margin: 70px auto 0; gap: 56px;">
-    <div>
-      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Inside the Masterclass</h2>
-      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px;">Most businesses hit a growth ceiling — not because of product or talent, but because the founder is still the engine. In this full-day session, you'll learn how scalable businesses really work, and how to build a repeatable system inside your own company.</p>
-      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 24px;">Move from ad-hoc decisions to structured systems, from founder-dependent operations to accountable teams, and from reactive firefighting to strategic growth.</p>
-      <div style="border-radius: var(--radius-xl); overflow: hidden; height: 260px;">
-        <div class="img-slot" id="slot-about-event"><img src="img/inside the masterclass.webp" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
-      </div>
+  <div class="exp-masterclass-grid" style="max-width: 1200px; margin: 70px auto 0;">
+    <div class="masterclass-img-wrap" style="border-radius: var(--radius-xl); overflow: hidden; height: 440px;">
+      <div class="img-slot" id="slot-about-event"><img src="img/inside the masterclass.webp" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
     </div>
-    <div>
-      <div class="exp-about-cards-grid" id="learn-cards"></div>
+    <div class="masterclass-card" style="padding: 44px 0; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">What You'll Learn</h2>
+      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 28px;">Most businesses hit a growth ceiling when the founder stays the engine. This session gives you the systems, team structure, and plan to scale beyond yourself.</p>
+      <div class="masterclass-points" id="learn-cards"></div>
     </div>
   </div>
 </section>
 
-<section style="background: var(--surface-page); padding: 70px 24px;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div style="text-align: center; max-width: 640px; margin: 0 auto 56px;">
-      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight);">Why Should You Attend?</h2>
-    </div>
-    <div class="exp-attend-grid" id="attend-cards"></div>
+<section class="attend-bg-section">
+  <div class="img-slot" id="slot-attend-bg"><img src="img/footer-bg.webp" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+  <div class="attend-feature-overlay"></div>
+  <div class="attend-feature-content">
+    <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: #fff; letter-spacing: var(--tracking-tight); text-align: center; margin: 0 auto 40px; max-width: 640px;">Why Should You Attend?</h2>
+    <div class="exp-attend-grid attend-grid-dark" id="attend-cards"></div>
   </div>
 </section>
 
-<section id="learn" style="background: var(--surface-section); padding: 70px 24px;">
-  <div class="exp-about-grid who" style="max-width: 1200px; margin: 0 auto; gap: 56px;">
+<section id="learn" style="background: var(--color-gray-50); padding: 70px 24px;">
+  <div class="exp-whoattend-grid" style="max-width: 1200px; margin: 0 auto;">
     <div>
       <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Who Should Attend</h2>
-      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 20px;">This session is designed for:</p>
-      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;" id="attend-primary"></div>
-      <p style="font-size: 14px; font-weight: 600; line-height: 22px; color: var(--text-heading); margin: 0 0 14px;">Especially valuable if you are:</p>
+      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px;">This session is designed for:</p>
+      <div class="whoattend-panel">
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="attend-primary"></div>
+      </div>
+      <p style="font-size: 14px; font-weight: 600; line-height: 22px; color: var(--text-heading); margin: 24px 0 14px;">Especially valuable if you are:</p>
       <div style="display: flex; flex-wrap: wrap; gap: 10px;" id="attend-secondary"></div>
     </div>
-    <div style="border-radius: var(--radius-xl); overflow: hidden; height: 460px;">
-      <div class="img-slot" id="slot-who-attend"><img src="img/Who should attend.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+    <div class="whoattend-img-wrap">
+      <div class="whoattend-accent"></div>
+      <div class="img-slot whoattend-photo" id="slot-who-attend" style="position: relative; z-index: 1; border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) 4px; overflow: hidden;"><img src="img/Who should attend.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
     </div>
   </div>
 </section>
@@ -517,12 +544,10 @@ listA.forEach(function(t, i) { rowA.insertAdjacentHTML('beforeend', cardHtml(t, 
 
 // Learn cards
 var learnCards = [
-  { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Founder-led to structured', desc: 'Why founder-dependent decisions stop working once you try to scale.' },
-  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', title: 'Building accountable teams', desc: 'The structural shift from doing everything to leading a team that delivers.' },
-  { icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z', title: 'Systems over hustle', desc: 'What a scalable operating system looks like — roles, rhythms, ownership.' },
-  { icon: 'M23 6l-9.5 9.5-5-5L1 18', title: 'Sustainable growth model', desc: 'How to grow revenue and margin together without burning out the team.' },
-  { icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM12 6v6l4 2', title: 'Spotting bottlenecks early', desc: 'Where founders unknowingly create ceilings — and how to catch it in time.' },
-  { icon: 'M18 20V10M12 20V4M6 20v-6', title: 'Reading the numbers', desc: 'Financial visibility that lets you act on problems before they compound.' }
+  { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Build Scalable Systems', desc: 'Repeatable processes that don\'t depend on you.' },
+  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', title: 'Develop Accountable Teams', desc: 'A team that delivers without constant oversight.' },
+  { icon: 'M23 6l-9.5 9.5-5-5L1 18', title: 'Scale with Confidence', desc: 'Grow revenue and margin together, sustainably.' },
+  { icon: 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11', title: 'Create an Action Plan', desc: 'A clear roadmap you can act on right away.' }
 ];
 var attendCards = [
   { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Systems, not scripts', desc: 'Built around what actually drives business growth.' },
@@ -537,11 +562,14 @@ var attendCards = [
 function iconTile(pathD) {
   return '<div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="' + pathD + '"/></svg></div>';
 }
+function iconTileSm(pathD) {
+  return '<div class="icon-tile-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="' + pathD + '"/></svg></div>';
+}
 var learnWrap = document.getElementById('learn-cards');
 learnCards.forEach(function(c) {
-  learnWrap.insertAdjacentHTML('beforeend', '<div class="learn-card">' + iconTile(c.icon) +
-    '<h4 style="font-family:var(--font-display);font-size:16px;color:var(--text-heading);margin:0 0 6px;">' + c.title + '</h4>' +
-    '<p style="font-size:14px;line-height:20px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div>');
+  learnWrap.insertAdjacentHTML('beforeend', '<div class="masterclass-point">' + iconTileSm(c.icon) +
+    '<div><h4 style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text-heading);margin:0 0 4px;">' + c.title + '</h4>' +
+    '<p style="font-size:13px;line-height:19px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div></div>');
 });
 var attendWrap = document.getElementById('attend-cards');
 attendCards.forEach(function(c) {
@@ -558,7 +586,7 @@ var attendPrimary = [
   'Owner-led product, services, and SME businesses',
   'Companies based in India and global markets (USA, Canada, Europe, Middle East)'
 ];
-var attendSecondary = ['Struggling with high-value deals', 'Too founder-dependent', 'Stuck at a plateau', "Can't scale predictably"];
+var attendSecondary = ['Founder-dependent business', 'Revenue has plateaued', 'Scaling feels chaotic', 'Too involved in daily operations', 'Team lacks accountability', "Can't step away confidently"];
 var primaryWrap = document.getElementById('attend-primary');
 attendPrimary.forEach(function(pt) {
   primaryWrap.insertAdjacentHTML('beforeend', '<div style="display:flex;gap:10px;"><span style="color:var(--color-coral);flex-shrink:0;">•</span><p style="margin:0;font-size:14px;line-height:22px;color:var(--text-body);">' + pt + '</p></div>');
