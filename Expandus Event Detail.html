@@ -75,7 +75,6 @@ img { max-width: 100%; display: block; }
   .testimonial-card { width: 300px; height: 198px; padding: 24px; }
 }
 .exp-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
-.exp-attend-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .exp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .exp-speaker-grid { display: grid; grid-template-columns: 0.35fr 0.65fr; gap: 64px; align-items: center; }
 .exp-speaker-grid > div { min-width: 0; }
@@ -83,22 +82,15 @@ img { max-width: 100%; display: block; }
 .exp-whoattend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .masterclass-points { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; row-gap: 22px; }
 .masterclass-point { display: flex; gap: 12px; align-items: flex-start; }
-.attend-card { background: var(--color-white); border: 1px solid var(--color-gray-100); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.attend-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-.icon-tile { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
 .icon-tile-sm { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.attend-bg-section { position: relative; overflow: hidden; padding: 90px 24px; box-sizing: border-box; }
-.attend-bg-section .img-slot { position: absolute; inset: 0; z-index: 0; border-radius: 0; }
-.attend-feature-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(160deg, rgba(34, 19, 49, 0.98) 0%, rgba(100, 54, 149, 0.92) 48%, rgba(34, 19, 49, 0.98) 100%); }
-.attend-feature-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
-.attend-grid-dark .attend-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); box-shadow: none; }
-.attend-grid-dark .attend-card:hover { background: rgba(255,255,255,0.12); box-shadow: none; }
-.attend-grid-dark .icon-tile { background: rgba(255,255,255,0.14); }
-.attend-grid-dark .icon-tile svg { stroke: #fff; }
-.attend-grid-dark h4 { color: #fff !important; }
-.attend-grid-dark p { color: var(--text-on-dark-soft) !important; }
-.whoattend-img-wrap { position: relative; }
-.whoattend-accent { position: absolute; inset: -20px -20px 20px 20px; background: var(--color-purple-tint); border-radius: var(--radius-xl); z-index: 0; }
+.why-attend-grid { display: grid; grid-template-columns: 60% 40%; gap: 64px; align-items: start; }
+.why-attend-copy p { font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px; }
+.why-attend-copy p:last-of-type { margin-bottom: 0; }
+.why-attend-list { display: flex; flex-direction: column; gap: 22px; padding-top: 6px; }
+.why-attend-item { display: flex; align-items: baseline; gap: 14px; }
+.why-attend-bar { width: 3px; height: 16px; background: var(--color-coral); border-radius: 2px; flex-shrink: 0; align-self: center; }
+.why-attend-item .why-attend-text { font-family: var(--font-display); font-size: 14px; color: var(--text-muted-aa); font-weight: 400; }
+.why-attend-item .why-attend-text b { font-weight: 700; color: var(--text-heading); }
 .whoattend-panel { padding: 0; }
 .whoattend-photo { height: 440px; }
 @media (max-width: 1024px) {
@@ -106,13 +98,10 @@ img { max-width: 100%; display: block; }
   .exp-stats-grid { grid-template-columns: 1fr; gap: 32px; }
   .exp-masterclass-grid { grid-template-columns: 1fr !important; }
   .exp-whoattend-grid { grid-template-columns: 1fr !important; }
-  .exp-attend-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .why-attend-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
   .speaker-img-wrap { min-height: 320px !important; }
   .masterclass-img-wrap { height: 320px !important; }
   .whoattend-photo { height: 320px !important; }
-}
-@media (max-width: 900px) {
-  .attend-bg-section { padding: 64px 24px; }
 }
 @media (max-width: 900px) {
   .speaker-img-wrap { min-height: 240px !important; }
@@ -148,12 +137,10 @@ img { max-width: 100%; display: block; }
   .cd-colon { left: -9px !important; }
 }
 @media (max-width: 640px) {
-  .masterclass-points, .exp-attend-grid { grid-template-columns: 1fr !important; }
+  .masterclass-points { grid-template-columns: 1fr !important; }
   .masterclass-card { padding: 28px 0 !important; }
   .masterclass-img-wrap { height: 260px !important; }
   .whoattend-photo { height: 260px !important; }
-  .attend-bg-section { padding: 48px 20px !important; }
-  .whoattend-accent { inset: -12px -12px 12px 12px !important; }
 }
 @media (max-width: 480px) {
   .ticket-seats-panel { padding: 28px 18px !important; }
@@ -347,12 +334,18 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<section class="attend-bg-section">
-  <div class="img-slot" id="slot-attend-bg"><img src="img/people-taking-part-high-protocol-event.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
-  <div class="attend-feature-overlay"></div>
-  <div class="attend-feature-content">
-    <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: #fff; letter-spacing: var(--tracking-tight); text-align: center; margin: 0 auto 40px; max-width: 640px;">Why Should You Attend?</h2>
-    <div class="exp-attend-grid attend-grid-dark" id="attend-cards"></div>
+<section style="background: var(--color-white); padding: 90px 24px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Why Should You Attend?</h2>
+    <div class="why-attend-grid">
+      <div class="why-attend-copy">
+        <p>Most founder-led businesses reach a plateau — not for lack of market opportunity, but because the operating model that brought them this far cannot take them further. This session focuses on what needs to change next: the systems, the team structure, and the plan required to scale beyond the founder.</p>
+        <p>Over 120 focused minutes, you will work directly with a coach who has guided 1,000+ founders through this exact transition, in a session designed for real questions and precise, actionable answers.</p>
+        <p>The session is led by a coach with 30+ years of industry experience, who has worked with owner-led businesses across India, the USA, Canada, and the Middle East on this same shift — from founder-dependent to enterprise-ready.</p>
+        <p>There is no fee to attend, and no filler content. This is a working session structured around the decisions you are facing right now — pricing strategy, pipeline discipline, team structure, and where to focus first.</p>
+      </div>
+      <div class="why-attend-list" id="attend-cards"></div>
+    </div>
   </div>
 </section>
 
@@ -368,14 +361,13 @@ img { max-width: 100%; display: block; }
       <div style="display: flex; flex-wrap: wrap; gap: 10px;" id="attend-secondary"></div>
     </div>
     <div class="whoattend-img-wrap">
-      <div class="whoattend-accent"></div>
-      <div class="img-slot whoattend-photo" id="slot-who-attend" style="position: relative; z-index: 1; border-radius: var(--radius-xl) var(--radius-xl) var(--radius-xl) 4px; overflow: hidden;"><img src="img/Who should attend.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+      <div class="img-slot whoattend-photo" id="slot-who-attend" style="border-radius: var(--radius-xl); overflow: hidden;"><img src="img/Who should attend.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
     </div>
   </div>
 </section>
 
 <section id="speaker" style="background: var(--surface-page); padding-top: 70px; overflow: hidden;">
-  <div class="exp-speaker-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; align-items: stretch;">
+  <div class="exp-speaker-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
     <div style="position: relative;">
       <div class="speaker-img-wrap" style="position: relative; z-index: 1; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; height: 100%; min-height: 460px;">
         <div class="img-slot" id="slot-speaker"><img src="img/speaker.png" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
@@ -550,18 +542,13 @@ var learnCards = [
   { icon: 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11', title: 'Create an Action Plan', desc: 'A clear roadmap you can act on right away.' }
 ];
 var attendCards = [
-  { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Systems, not scripts', desc: 'Built around what actually drives business growth.' },
-  { icon: 'M20 7h-9M14 17H5M17 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', title: 'Built for founders', desc: 'Every framework is tailored to owner-led businesses.' },
-  { icon: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0zM16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z', title: 'Four pillars covered', desc: 'Structure, process, people & mindset — a scalable business.' },
-  { icon: 'M13 2 3 14h9l-1 8 10-12h-9z', title: 'Implement immediately', desc: 'Not theory, but actionable clarity you can apply right away.' },
-  { icon: 'M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.35-4.35', title: "Spot what's missing", desc: 'Identify the gaps in how your business currently runs.' },
-  { icon: 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11', title: 'Clear next steps', desc: 'Walk away ready to move the needle right after the session.' },
-  { icon: 'M3 6h18M3 12h18M3 18h18', title: 'A scaling blueprint', desc: 'A clear path to grow beyond your own bandwidth.' },
-  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', title: 'Team clarity', desc: 'Clarity on team structure and roles so accountability sticks.' }
+  { title: 'Scalable Systems', subtitle: 'Systems over chaos.' },
+  { title: 'Growth Blueprint', subtitle: 'A roadmap to scale.' },
+  { title: 'Clear Direction', subtitle: 'Know what comes next.' },
+  { title: 'Team Alignment', subtitle: 'Better roles. Better ownership.' },
+  { title: 'Immediate Action', subtitle: 'Put ideas into practice.' },
+  { title: 'Founder Focus', subtitle: 'Made for founders.' }
 ];
-function iconTile(pathD) {
-  return '<div class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="' + pathD + '"/></svg></div>';
-}
 function iconTileSm(pathD) {
   return '<div class="icon-tile-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="' + pathD + '"/></svg></div>';
 }
@@ -569,13 +556,11 @@ var learnWrap = document.getElementById('learn-cards');
 learnCards.forEach(function(c) {
   learnWrap.insertAdjacentHTML('beforeend', '<div class="masterclass-point">' + iconTileSm(c.icon) +
     '<div><h4 style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text-heading);margin:0 0 4px;">' + c.title + '</h4>' +
-    '<p style="font-size:13px;line-height:19px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div></div>');
+    '<p style="font-size:14px;line-height:20px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div></div>');
 });
 var attendWrap = document.getElementById('attend-cards');
 attendCards.forEach(function(c) {
-  attendWrap.insertAdjacentHTML('beforeend', '<div class="attend-card">' + iconTile(c.icon) +
-    '<h4 style="font-family:var(--font-display);font-size:16px;color:var(--text-heading);margin:0 0 6px;">' + c.title + '</h4>' +
-    '<p style="font-size:14px;line-height:20px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div>');
+  attendWrap.insertAdjacentHTML('beforeend', '<div class="why-attend-item"><span class="why-attend-bar"></span><span class="why-attend-text"><b>' + c.title + '</b> — ' + c.subtitle + '</span></div>');
 });
 
 // Who should attend lists
@@ -586,14 +571,14 @@ var attendPrimary = [
   'Owner-led product, services, and SME businesses',
   'Companies based in India and global markets (USA, Canada, Europe, Middle East)'
 ];
-var attendSecondary = ['Founder-dependent business', 'Revenue has plateaued', 'Scaling feels chaotic', 'Too involved in daily operations', 'Team lacks accountability', "Can't step away confidently"];
+var attendSecondary = ['Founder-dependent', 'Revenue plateaued', 'Chaotic scaling', 'Too hands-on', 'Low accountability', "Can't step away"];
 var primaryWrap = document.getElementById('attend-primary');
 attendPrimary.forEach(function(pt) {
   primaryWrap.insertAdjacentHTML('beforeend', '<div style="display:flex;gap:10px;"><span style="color:var(--color-coral);flex-shrink:0;">•</span><p style="margin:0;font-size:14px;line-height:22px;color:var(--text-body);">' + pt + '</p></div>');
 });
 var secondaryWrap = document.getElementById('attend-secondary');
 attendSecondary.forEach(function(pt) {
-  secondaryWrap.insertAdjacentHTML('beforeend', '<span style="display:inline-flex;align-items:center;gap:6px;background:var(--color-white);border:1px solid var(--border-default);color:var(--text-heading);font-size:13px;padding:8px 14px;border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>' + pt + '</span>');
+  secondaryWrap.insertAdjacentHTML('beforeend', '<span style="display:inline-flex;align-items:center;gap:6px;background:var(--color-white);border:1px solid var(--border-default);color:var(--text-body);font-size:13px;padding:8px 14px;border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>' + pt + '</span>');
 });
 </script>
 </body>
