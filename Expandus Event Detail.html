@@ -357,7 +357,7 @@ img { max-width: 100%; display: block; }
       <div class="whoattend-panel">
         <div style="display: flex; flex-direction: column; gap: 10px;" id="attend-primary"></div>
       </div>
-      <p style="font-size: 14px; font-weight: 600; line-height: 22px; color: var(--text-heading); margin: 24px 0 14px;">Especially valuable if you are:</p>
+      <p style="font-size: 14px; font-weight: 600; line-height: 22px; color: var(--text-body); margin: 24px 0 14px;">Especially valuable if you are:</p>
       <div style="display: flex; flex-wrap: wrap; gap: 10px;" id="attend-secondary"></div>
     </div>
     <div class="whoattend-img-wrap">
@@ -578,7 +578,7 @@ attendPrimary.forEach(function(pt) {
 });
 var secondaryWrap = document.getElementById('attend-secondary');
 attendSecondary.forEach(function(pt) {
-  secondaryWrap.insertAdjacentHTML('beforeend', '<span style="display:inline-flex;align-items:center;gap:6px;background:var(--color-white);border:1px solid var(--border-default);color:var(--text-body);font-size:13px;padding:8px 14px;border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>' + pt + '</span>');
+  secondaryWrap.insertAdjacentHTML('beforeend', '<span style="display:inline-flex;align-items:center;gap:6px;background:var(--color-white);border:1px solid var(--border-default);color:var(--text-heading);font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>' + pt + '</span>');
 });
 </script>
 </body>
