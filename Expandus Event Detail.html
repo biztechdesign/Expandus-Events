@@ -41,7 +41,7 @@
   :root { --text-h1: 40px; --lh-h1: 48px; --text-h2: 32px; --lh-h2: 40px; --text-h5: 18px; --lh-h5: 26px; }
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--surface-page); overflow-x: hidden; font-family: var(--font-body); color: var(--text-body); }
+body { margin: 0; background: var(--surface-page); overflow-x: clip; font-family: var(--font-body); color: var(--text-body); }
 h1,h2,h3,h4,p { margin: 0; }
 a { color: var(--text-link); text-decoration: none; }
 a:hover { color: var(--text-link-hover); }
@@ -78,29 +78,42 @@ img { max-width: 100%; display: block; }
 .exp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .exp-speaker-grid { display: grid; grid-template-columns: 0.35fr 0.65fr; gap: 64px; align-items: center; }
 .exp-speaker-grid > div { min-width: 0; }
-.exp-masterclass-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: stretch; }
 .exp-whoattend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.masterclass-points { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 20px; row-gap: 22px; }
-.masterclass-point { display: flex; gap: 12px; align-items: flex-start; }
-.icon-tile-sm { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--color-purple-tint); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.why-attend-grid { display: grid; grid-template-columns: 60% 40%; gap: 64px; align-items: start; }
-.why-attend-copy p { font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px; }
-.why-attend-copy p:last-of-type { margin-bottom: 0; }
-.why-attend-list { display: flex; flex-direction: column; gap: 22px; padding-top: 6px; }
-.why-attend-item { display: flex; align-items: baseline; gap: 14px; }
-.why-attend-bar { width: 3px; height: 16px; background: var(--color-coral); border-radius: 2px; flex-shrink: 0; align-self: center; }
-.why-attend-item .why-attend-text { font-family: var(--font-display); font-size: 14px; color: var(--text-muted-aa); font-weight: 400; }
-.why-attend-item .why-attend-text b { font-weight: 700; color: var(--text-heading); }
-.whoattend-panel { padding: 0; }
-.whoattend-photo { height: 440px; }
+.masterclass-top-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+.masterclass-copy p { font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px; }
+.masterclass-label { font-size: 14px; font-weight: 600; color: var(--text-heading); margin: 8px 0 12px; }
+.masterclass-dash-list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.masterclass-dash-list li { display: flex; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--border-default); font-size: 14px; line-height: 20px; color: var(--text-body); }
+.masterclass-dash { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--color-gray-300); flex-shrink: 0; width: 30px; }
+.masterclass-photo { border-radius: var(--radius-xl); overflow: hidden; height: 460px; background: var(--color-white); }
+.masterclass-photo img, .whoattend-photo img { object-fit: contain; }
+.whoattend-photo img { object-position: center bottom; }
+.masterclass-quote { border-left: 3px solid var(--color-coral); padding: 4px 0 4px 24px; margin: 48px 0 40px; }
+.masterclass-quote p { font-family: var(--font-body); font-style: italic; font-size: 18px; line-height: 28px; color: var(--text-heading); margin: 0; }
+.masterclass-transition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-top: 1px solid var(--border-default); padding-top: 20px; }
+.masterclass-transition-item .old { display: block; font-size: 13px; color: var(--text-muted-aa); text-decoration: line-through; margin-bottom: 4px; }
+.masterclass-transition-item .new { display: block; font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--text-heading); }
+.masterclass-audience { font-size: 14px; line-height: 20px; color: var(--text-body); margin: 32px 0 0; }
+.outcome-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; }
+.outcome-sticky-col { position: sticky; top: 108px; }
+.outcome-list { display: flex; flex-direction: column; gap: 20px; }
+.outcome-card { border: 1px solid var(--border-default); border-radius: var(--radius-card); padding: 24px 28px; background: var(--color-white); box-sizing: border-box; }
+.outcome-label { display: block; font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: var(--tracking-wide); color: var(--text-heading); margin-bottom: 8px; }
+.outcome-card p { margin: 0; font-size: 14px; line-height: 20px; color: var(--text-body); }
+.who-topic-list { display: flex; flex-direction: column; }
+.who-topic-item { padding: 20px 0; border-bottom: 1px solid var(--border-default); }
+.who-topic-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--text-heading); margin: 0 0 4px; }
+.who-topic-sub { font-size: 14px; line-height: 20px; color: var(--text-body); margin: 0; }
+.whoattend-photo { height: 440px; background: var(--color-white); }
 @media (max-width: 1024px) {
   .exp-hero-grid { grid-template-columns: 1fr; }
   .exp-stats-grid { grid-template-columns: 1fr; gap: 32px; }
-  .exp-masterclass-grid { grid-template-columns: 1fr !important; }
+  .masterclass-top-grid { grid-template-columns: 1fr !important; }
   .exp-whoattend-grid { grid-template-columns: 1fr !important; }
-  .why-attend-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .outcome-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .outcome-sticky-col { position: static !important; top: auto !important; }
   .speaker-img-wrap { min-height: 320px !important; }
-  .masterclass-img-wrap { height: 320px !important; }
+  .masterclass-photo { height: 380px !important; }
   .whoattend-photo { height: 320px !important; }
 }
 @media (max-width: 900px) {
@@ -137,10 +150,11 @@ img { max-width: 100%; display: block; }
   .cd-colon { left: -9px !important; }
 }
 @media (max-width: 640px) {
-  .masterclass-points { grid-template-columns: 1fr !important; }
-  .masterclass-card { padding: 28px 0 !important; }
-  .masterclass-img-wrap { height: 260px !important; }
+  .masterclass-transition-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .masterclass-photo { height: 300px !important; }
+  .masterclass-quote p { font-size: 16px !important; line-height: 24px !important; }
   .whoattend-photo { height: 260px !important; }
+  .speaker-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 20px !important; }
 }
 @media (max-width: 480px) {
   .ticket-seats-panel { padding: 28px 18px !important; }
@@ -223,8 +237,14 @@ img { max-width: 100%; display: block; }
   <div class="exp-ticket-grid" style="display: grid; grid-template-columns: 2fr 3fr; position: relative; overflow: hidden; border-radius: 30px; -webkit-mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); -webkit-mask-composite: source-in, source-in; mask-image: radial-gradient(circle 28px at 40% 0px, transparent 27px, black 29px), radial-gradient(circle 28px at 40% 100%, transparent 27px, black 29px); mask-composite: intersect, intersect;">
     <div class="ticket-seats-panel" style="background: radial-gradient(120% 120% at 0% 0%, rgba(240,79,83,0.16) 0%, var(--color-plum) 45%), var(--color-plum); padding: 48px 44px; position: relative; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; border: 2px dashed var(--border-default); border-right: 0; border-radius: 30px;">
       <div>
-        <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: #fff; margin: 0 0 14px;">Don't Miss This Session</h3>
-        <p style="font-size: 14px; line-height: 22px; color: var(--text-on-dark-soft); margin: 0 0 26px;">The founders who figure this out don't find a better product. They find a better process. This is where that starts.<br><br>Just 120 mins of your time and no registration fees.</p>
+        <h3 style="font-family: var(--font-display); font-size: var(--text-h5); line-height: var(--lh-h5); color: #fff; margin: 0 0 18px;">Don't Miss This Session</h3>
+        <ul style="list-style: none; margin: 0 0 26px; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+          <li style="display: flex; align-items: flex-start; gap: 10px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2.5" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-size: 14px; line-height: 20px; color: var(--text-on-dark-soft);">Built for IT Services/ Software Founders</span></li>
+          <li style="display: flex; align-items: flex-start; gap: 10px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2.5" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-size: 14px; line-height: 20px; color: var(--text-on-dark-soft);">4+ Practical Frameworks</span></li>
+          <li style="display: flex; align-items: flex-start; gap: 10px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2.5" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-size: 14px; line-height: 20px; color: var(--text-on-dark-soft);">Actionable Strategies</span></li>
+          <li style="display: flex; align-items: flex-start; gap: 10px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2.5" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-size: 14px; line-height: 20px; color: var(--text-on-dark-soft);">Live Q&amp;A</span></li>
+          <li style="display: flex; align-items: flex-start; gap: 10px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-coral)" stroke-width="2.5" style="flex-shrink: 0; margin-top: 3px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-size: 14px; line-height: 20px; color: var(--text-on-dark-soft);">Scale-Ready Sales System</span></li>
+        </ul>
       </div>
       <div id="countdown" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; margin-bottom: 28px; width: 100%;">
         <div style="text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-md); padding: 14px 2px;">
@@ -322,29 +342,45 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
   </div>
-  <div class="exp-masterclass-grid" style="max-width: 1200px; margin: 70px auto 0;">
-    <div class="masterclass-img-wrap" style="border-radius: var(--radius-xl); overflow: hidden; height: 440px;">
-      <div class="img-slot" id="slot-about-event"><img src="img/inside the masterclass.webp" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+  <div style="max-width: 1200px; margin: 70px auto 0;">
+    <div class="masterclass-top-grid">
+      <div class="masterclass-copy">
+        <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">About The Masterclass</h2>
+        <p>Most software companies hit a growth ceiling that has nothing to do with product or people. It comes down to a sales engine built to win a few deals, not enterprise scale.</p>
+        <p class="masterclass-label">Enterprise sales isn't just bigger deals. It demands:</p>
+        <ul class="masterclass-dash-list">
+          <li><span class="masterclass-dash">01</span>A different mindset &amp; org structure</li>
+          <li><span class="masterclass-dash">02</span>A different sales process &amp; value narrative</li>
+          <li><span class="masterclass-dash">03</span>A real approach to entering, expanding and sustaining large accounts</li>
+        </ul>
+      </div>
+      <div class="masterclass-photo">
+        <div class="img-slot" id="slot-about-event"><img src="img/About The Masterclass.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+      </div>
     </div>
-    <div class="masterclass-card" style="padding: 44px 0; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">What You'll Learn</h2>
-      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 28px;">Most businesses hit a growth ceiling when the founder stays the engine. This session gives you the systems, team structure, and plan to scale beyond yourself.</p>
-      <div class="masterclass-points" id="learn-cards"></div>
+    <div class="masterclass-quote">
+      <p>"If the founder is still the only one who can close, or growth has flattened despite winning accounts, this session is built to break that wall."</p>
     </div>
+    <p class="masterclass-label" style="margin: 0 0 20px;">In two hours, get clarity on what enterprise sales demands, and move from:</p>
+    <div class="masterclass-transition-grid">
+      <div class="masterclass-transition-item"><span class="old">Ad-hoc deals</span><span class="new">Structured pipelines</span></div>
+      <div class="masterclass-transition-item"><span class="old">Founder-dependent sales</span><span class="new">Scalable teams</span></div>
+      <div class="masterclass-transition-item"><span class="old">Transactional selling</span><span class="new">Strategic, multi-stakeholder wins</span></div>
+    </div>
+    <p class="masterclass-audience">Built for Founders, CEOs at software, SaaS and services companies in India or selling into the USA, Canada, Europe or the Middle East.</p>
   </div>
 </section>
 
 <section style="background: var(--color-white); padding: 90px 24px;">
   <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Why Should You Attend?</h2>
-    <div class="why-attend-grid">
-      <div class="why-attend-copy">
-        <p>Most founder-led businesses reach a plateau — not for lack of market opportunity, but because the operating model that brought them this far cannot take them further. This session focuses on what needs to change next: the systems, the team structure, and the plan required to scale beyond the founder.</p>
-        <p>Over 120 focused minutes, you will work directly with a coach who has guided 1,000+ founders through this exact transition, in a session designed for real questions and precise, actionable answers.</p>
-        <p>The session is led by a coach with 30+ years of industry experience, who has worked with owner-led businesses across India, the USA, Canada, and the Middle East on this same shift — from founder-dependent to enterprise-ready.</p>
-        <p>There is no fee to attend, and no filler content. This is a working session structured around the decisions you are facing right now — pricing strategy, pipeline discipline, team structure, and where to focus first.</p>
+    <div class="outcome-grid">
+      <div class="outcome-col-wrap">
+        <div class="outcome-sticky-col">
+          <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 24px;">What You'll Walk Away With</h2>
+          <div class="img-slot masterclass-photo" id="slot-attend-photo"><img src="img/What You'll Walk Away With.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+        </div>
       </div>
-      <div class="why-attend-list" id="attend-cards"></div>
+      <div class="outcome-list" id="attend-cards"></div>
     </div>
   </div>
 </section>
@@ -352,16 +388,11 @@ img { max-width: 100%; display: block; }
 <section id="learn" style="background: var(--color-gray-50); padding: 70px 24px;">
   <div class="exp-whoattend-grid" style="max-width: 1200px; margin: 0 auto;">
     <div>
-      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Who Should Attend</h2>
-      <p style="font-size: 14px; line-height: 22px; color: var(--text-body); margin: 0 0 16px;">This session is designed for:</p>
-      <div class="whoattend-panel">
-        <div style="display: flex; flex-direction: column; gap: 10px;" id="attend-primary"></div>
-      </div>
-      <p style="font-size: 14px; font-weight: 600; line-height: 22px; color: var(--text-body); margin: 24px 0 14px;">Especially valuable if you are:</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px;" id="attend-secondary"></div>
+      <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 0 0 20px;">Inside The Session</h2>
+      <div class="who-topic-list" id="who-topics"></div>
     </div>
     <div class="whoattend-img-wrap">
-      <div class="img-slot whoattend-photo" id="slot-who-attend" style="border-radius: var(--radius-xl); overflow: hidden;"><img src="img/Who should attend.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
+      <div class="img-slot whoattend-photo" id="slot-who-attend" style="border-radius: var(--radius-xl); overflow: hidden;"><img src="img/Inside The Session.jpg" alt=""><label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label></div>
     </div>
   </div>
 </section>
@@ -379,23 +410,29 @@ img { max-width: 100%; display: block; }
     </div>
     <div style="padding-bottom: 70px;">
       <h2 style="font-family: var(--font-display); font-size: var(--text-h2); line-height: var(--lh-h2); color: var(--text-heading); letter-spacing: var(--tracking-tight); margin: 10px 0 6px; font-weight: 700;">Meet Your Coach</h2>
-      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 20px 0;">Tabish is a five-time award-winning Business Coach with over 30 years of industry experience. For the past 11 years, she has been coaching and mentoring high-performing software company founders across India, the USA, Turkey, Qatar, and Canada.</p>
-      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 0 0 20px;">With two decades of experience in the IT sector — spanning early-stage software startups, leading Indian IT corporates, and a global MNC — Tabish brings a rare blend of micro-level execution insight and macro-level strategic thinking.</p>
-      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 0 0 28px;">Her ability to deeply understand both the founder's mindset and enterprise buyer realities allows her to help entrepreneurs build scalable, resilient, and globally competitive software businesses.</p>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 20px 0;">Tabish has spent the last several years inside the exact transition this session is built around, coaching software founders through the jump from closing small deals to winning and sustaining whale accounts. Her client base spans multiple countries, giving her a read on enterprise buying that isn't limited to one market's playbook.</p>
+      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 0 0 20px;">Before coaching, she spent two decades in senior IT roles, leading positions at Indian IT corporates and a global MNC. That's not incidental. It means she has sat on both sides of the enterprise sale, inside the boardrooms where large accounts get decided and inside the leadership teams that had to build a system capable of winning them. Few coaches carry both the founder's instinct for closing and the enterprise buyer's instinct for stalling, vetting and delaying. Tabish built her practice on knowing exactly where that gap sits, and how to close it.</p>
+      <p style="font-size: 14px; line-height: 24px; color: var(--text-body); margin: 0 0 28px;">She is also a TiE Pune Charter Member and part of The Ascent Foundation, placing her inside two of the country's most influential entrepreneurial and business leadership communities.</p>
+      <p style="font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text-heading); letter-spacing: var(--tracking-wide); text-transform: uppercase; margin: 0 0 14px;">Proof, Not Promises</p>
+      <div class="speaker-stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        <div>
+          <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">5X</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Award-winning</div>
+        </div>
         <div>
           <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">30+</div>
-          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide); white-space: nowrap;">Years experience</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Years experience</div>
         </div>
         <div>
           <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">11</div>
-          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide); white-space: nowrap;">Years coaching</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Years coaching</div>
         </div>
         <div>
-          <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">5</div>
-          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide); white-space: nowrap;">Coaching awards</div>
+          <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--color-primary);">5+</div>
+          <div style="color: var(--text-muted-aa); font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Countries served</div>
         </div>
       </div>
+      <p style="font-size: 13px; line-height: 20px; color: var(--text-muted-aa); margin: 16px 0 0;">India, USA, Turkey, Qatar, Canada and much more.</p>
     </div>
   </div>
 </section>
@@ -534,51 +571,29 @@ var rowA = document.getElementById('row-a');
 var listA = testimonials.concat(testimonials);
 listA.forEach(function(t, i) { rowA.insertAdjacentHTML('beforeend', cardHtml(t, 'a' + i)); });
 
-// Learn cards
-var learnCards = [
-  { icon: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z', title: 'Build Scalable Systems', desc: 'Repeatable processes that don\'t depend on you.' },
-  { icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', title: 'Develop Accountable Teams', desc: 'A team that delivers without constant oversight.' },
-  { icon: 'M23 6l-9.5 9.5-5-5L1 18', title: 'Scale with Confidence', desc: 'Grow revenue and margin together, sustainably.' },
-  { icon: 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11', title: 'Create an Action Plan', desc: 'A clear roadmap you can act on right away.' }
-];
 var attendCards = [
-  { title: 'Scalable Systems', subtitle: 'Systems over chaos.' },
-  { title: 'Growth Blueprint', subtitle: 'A roadmap to scale.' },
-  { title: 'Clear Direction', subtitle: 'Know what comes next.' },
-  { title: 'Team Alignment', subtitle: 'Better roles. Better ownership.' },
-  { title: 'Immediate Action', subtitle: 'Put ideas into practice.' },
-  { title: 'Founder Focus', subtitle: 'Made for founders.' }
+  "Why founder-led sales breaks down the moment you move upmarket, and what has to change instead",
+  "How enterprise buying committees actually decide, and why traditional closing tactics fall flat",
+  "The real difference between hunting and farming, and why scaling whale accounts needs both",
+  "A working framework for entering, sustaining and expanding large accounts",
+  "Where enterprise deals quietly stall or die, and how to catch it before it's too late",
+  "Clarity on the team structure and roles an enterprise sales engine actually needs"
 ];
-function iconTileSm(pathD) {
-  return '<div class="icon-tile-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="' + pathD + '"/></svg></div>';
-}
-var learnWrap = document.getElementById('learn-cards');
-learnCards.forEach(function(c) {
-  learnWrap.insertAdjacentHTML('beforeend', '<div class="masterclass-point">' + iconTileSm(c.icon) +
-    '<div><h4 style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--text-heading);margin:0 0 4px;">' + c.title + '</h4>' +
-    '<p style="font-size:14px;line-height:20px;color:var(--text-muted-aa);margin:0;">' + c.desc + '</p></div></div>');
-});
 var attendWrap = document.getElementById('attend-cards');
-attendCards.forEach(function(c) {
-  attendWrap.insertAdjacentHTML('beforeend', '<div class="why-attend-item"><span class="why-attend-bar"></span><span class="why-attend-text"><b>' + c.title + '</b> — ' + c.subtitle + '</span></div>');
+attendCards.forEach(function(text, i) {
+  var num = String(i + 1).padStart(2, '0');
+  attendWrap.insertAdjacentHTML('beforeend', '<div class="outcome-card"><span class="outcome-label">Outcome ' + num + '</span><p>' + text + '</p></div>');
 });
 
-// Who should attend lists
-var attendPrimary = [
-  'Founders & co-founders of growing businesses',
-  'CEOs & Managing Directors',
-  'Sales heads & revenue leaders',
-  'Owner-led product, services, and SME businesses',
-  'Companies based in India and global markets (USA, Canada, Europe, Middle East)'
+// Session breakdown topics
+var whoTopics = [
+  { title: 'Why Founder-Led Sales Stops Scaling', sub: 'what breaks when you move from SMB to enterprise' },
+  { title: 'How Enterprise Buyers Really Decide', sub: 'committees, long cycles, and what traditional selling gets wrong' },
+  { title: 'Building the System', sub: 'the roles, structure and internal collaboration enterprise sales requires' }
 ];
-var attendSecondary = ['Founder-dependent', 'Revenue plateaued', 'Chaotic scaling', 'Too hands-on', 'Low accountability', "Can't step away"];
-var primaryWrap = document.getElementById('attend-primary');
-attendPrimary.forEach(function(pt) {
-  primaryWrap.insertAdjacentHTML('beforeend', '<div style="display:flex;gap:10px;"><span style="color:var(--color-coral);flex-shrink:0;">•</span><p style="margin:0;font-size:14px;line-height:22px;color:var(--text-body);">' + pt + '</p></div>');
-});
-var secondaryWrap = document.getElementById('attend-secondary');
-attendSecondary.forEach(function(pt) {
-  secondaryWrap.insertAdjacentHTML('beforeend', '<span style="display:inline-flex;align-items:center;gap:6px;background:var(--color-white);border:1px solid var(--border-default);color:var(--text-heading);font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>' + pt + '</span>');
+var topicWrap = document.getElementById('who-topics');
+whoTopics.forEach(function(t) {
+  topicWrap.insertAdjacentHTML('beforeend', '<div class="who-topic-item"><h4 class="who-topic-title">' + t.title + '</h4><p class="who-topic-sub">— ' + t.sub + '</p></div>');
 });
 </script>
 </body>
