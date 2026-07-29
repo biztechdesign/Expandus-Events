@@ -96,8 +96,8 @@ img { max-width: 100%; display: block; }
 .masterclass-audience { font-size: 14px; line-height: 20px; color: var(--text-body); margin: 32px 0 0; }
 .outcome-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; }
 .outcome-sticky-col { position: sticky; top: 108px; }
-.outcome-list { display: flex; flex-direction: column; gap: 20px; }
-.outcome-card { border: 1px solid var(--border-default); border-radius: var(--radius-card); padding: 24px 28px; background: var(--color-white); box-sizing: border-box; }
+.outcome-list { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, auto); grid-auto-flow: column; align-items: start; align-content: start; gap: 20px; }
+.outcome-card { border: 1px solid var(--border-default); border-radius: var(--radius-card); padding: 24px 28px; background: var(--color-white); box-sizing: border-box; min-height: 160px; }
 .outcome-label { display: block; font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: var(--tracking-wide); color: var(--text-heading); margin-bottom: 8px; }
 .outcome-card p { margin: 0; font-size: 14px; line-height: 20px; color: var(--text-body); }
 .who-topic-list { display: flex; flex-direction: column; }
@@ -155,6 +155,7 @@ img { max-width: 100%; display: block; }
   .masterclass-quote p { font-size: 16px !important; line-height: 24px !important; }
   .whoattend-photo { height: 260px !important; }
   .speaker-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px 20px !important; }
+  .outcome-list { grid-template-columns: 1fr !important; grid-template-rows: none !important; grid-auto-flow: row !important; }
 }
 @media (max-width: 480px) {
   .ticket-seats-panel { padding: 28px 18px !important; }
