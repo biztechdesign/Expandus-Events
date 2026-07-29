@@ -166,9 +166,6 @@ img { max-width: 100%; display: block; }
 @media (max-width: 1150px) {
   .exp-header-nav, .exp-header-social { display: none !important; }
 }
-@media (max-width: 1000px) {
-  #slot-hero-bg img { object-position: left center; }
-}
 @media (max-width: 700px) {
   .exp-stats-cta-row { justify-content: center !important; text-align: center; padding: 24px 20px !important; }
   .exp-stats-cta-stats { justify-content: space-between !important; flex-wrap: nowrap !important; gap: 10px !important; width: 100%; }
@@ -204,31 +201,10 @@ img { max-width: 100%; display: block; }
   </div>
 </header>
 
-<section id="hero" style="position: relative; height: 350px; box-sizing: border-box; padding: 24px 0 90px; display: flex; align-items: center; overflow: hidden;">
-  <div style="position: absolute; inset: 0; z-index: 0;">
-    <div class="img-slot" id="slot-hero-bg" data-placeholder="Drop a leadership / business-growth background image" style="border-radius: 0;">
-      <!--<span class="ph-label">Drop a leadership / business-growth background image</span>-->
-      <img src="img/hero-banner.png" alt="">
-      <label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label>
-    </div>
-    <div style="position: absolute; inset: 0;"></div>
-  </div>
-  <div style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%;">
-    <h1 style="font-family: var(--font-display); font-size: var(--text-h1); line-height: var(--lh-h1); letter-spacing: var(--tracking-tight); color: var(--color-white); font-weight: 700; margin: 0 0 16px; max-width: 640px; text-shadow: 0 2px 12px rgba(34,19,49,0.45);">From Founder-Led to Enterprise Sales</h1>
-    <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap; max-width: 640px;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        <span style="color: #fff; font-size: 14px;">Fri, Sep 18, 2026</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <span style="color: #fff; font-size: 14px;">9:30 AM IST</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F04F53" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-4v12l-6-4"/></svg>
-        <span style="color: #fff; font-size: 14px;">Online via Zoom</span>
-      </div>
-    </div>
+<section id="hero" style="position: relative; overflow: hidden;">
+  <div class="img-slot" id="slot-hero-bg" style="border-radius: 0; width: 100%; height: auto; aspect-ratio: 1920 / 500;">
+    <img src="img/hero banner.jpg" alt="From Founder-Led to Enterprise Sales — Live Webinar, 8th August 2026, 11:30 AM - 1:30 PM">
+    <label style="position: absolute; inset: 0; cursor: pointer;"><input type="file" accept="image/*"></label>
   </div>
 </section>
 
